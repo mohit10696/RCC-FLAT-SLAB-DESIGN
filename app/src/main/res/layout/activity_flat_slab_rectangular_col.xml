@@ -1,9 +1,386 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FlatSlabRectangularCol">
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rel_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="40px"
+
+            >
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:background="@color/grey"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:onClick="toggleMaterialProperties"
+                android:padding="20px"
+                android:text="MATERIAL PROPERTIES"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <LinearLayout
+                android:id="@+id/ll_material_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv1"
+                android:layout_marginEnd="350px"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fck   (Grade of concrete)" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fy" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_material_data"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv1"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_fck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_fy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel_1"
+            android:padding="40px"
+
+            >
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:background="@color/grey"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:onClick="togglepPRELIMINARYDIMENSION"
+                android:padding="10px"
+                android:text="PRELIMINARY DIMENSION	"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <LinearLayout
+                android:id="@+id/ll_prelimitry_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv2"
+                android:layout_marginEnd="350px"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="INRERIOR PANEL: 	"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:gravity="center"
+                    android:text="LONGER SPAN"
+                    android:textAlignment="center"
+                    android:textSize="40px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:gravity="center"
+                    android:text="SHORTER SPAN"
+                    android:textAlignment="center"
+                    android:textSize="40px" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SIZE OF COLUMN:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:gravity="center"
+                    android:text="LENGTH"
+                    android:textAlignment="center"
+                    android:textSize="40px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:gravity="center"
+                    android:text="BREADTH"
+                    android:textAlignment="center"
+                    android:textSize="40px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:gravity="center"
+                    android:text="LIVE LOAD"
+                    android:textSize="40px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:gravity="center_vertical"
+                    android:text="FLOOR FINISH"
+                    android:textSize="40px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:gravity="center_vertical"
+                    android:text="HEIGHT OF COLUMN"
+                    android:textSize="40px" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_prelimitry_data"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv2"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/et_interior_longer_span"
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:layout_marginTop="50px"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                    android:id="@+id/et_interior_shorter_span"
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                    android:id="@+id/et_size_of_col_length"
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:layout_marginTop="50px"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                    android:id="@+id/et_size_of_col_breadth"
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                    android:id="@+id/et_live_load"
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                    android:id="@+id/et_floor_finish"
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                    android:id="@+id/et_height_of_col"
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:inputType="numberDecimal" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rel_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel_2"
+            android:padding="40px"
+
+            >
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:background="@color/grey"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:onClick="toggledosProperties"
+                android:padding="10px"
+                android:text="DEPTH OF SLAB	"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <LinearLayout
+                android:id="@+id/ll_dos_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv3"
+                android:layout_marginEnd="350px"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="l/d=26*M.F. (l=longer span)" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Assume pt= 0.40%" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="M.F. = 1/(1+0.625Log pt)" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Depth (d)" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Provide overall depth (D)" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Assume Φ = 10mm" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Clear cover = 20mm" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="d (depth without effective cover)		" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="dl (for longer side)	" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ds (for shorter side)	" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_dos_data"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv3"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_m_f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_depth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_Provide_overall_depth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_depth_without_effective_cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_dl_for_longer_side"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_ds_for_shorter_side"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

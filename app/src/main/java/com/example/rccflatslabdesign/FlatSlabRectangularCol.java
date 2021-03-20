@@ -1,15 +1,78 @@
 package com.example.rccflatslabdesign;
 
+import android.app.ActionBar;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import static java.lang.Math.PI;
 import static java.lang.Math.pow;
 
 public class FlatSlabRectangularCol extends AppCompatActivity {
+
+
+    @BindView(R.id.tv_fck)
+    TextView tv_fck;
+
+    @BindView(R.id.tv_fy)
+    TextView tv_fy;
+
+    @BindView(R.id.ll_material_text)
+    LinearLayout ll_material_text;
+    @BindView(R.id.ll_material_data)
+    LinearLayout ll_material_data;
+
+    @BindView(R.id.ll_prelimitry_text)
+    LinearLayout ll_prelimitry_text;
+    @BindView(R.id.ll_prelimitry_data)
+    LinearLayout ll_prelimitry_data;
+
+    @BindView(R.id.ll_dos_text)
+    LinearLayout ll_dos_text;
+    @BindView(R.id.ll_dos_data)
+    LinearLayout ll_dos_data;
+
+    @BindView(R.id.et_interior_longer_span)
+    EditText et_interior_longer_span;
+    @BindView(R.id.et_interior_shorter_span)
+    EditText et_interior_shorter_span;
+    @BindView(R.id.et_size_of_col_length)
+    EditText et_size_of_col_length;
+    @BindView(R.id.et_size_of_col_breadth)
+    EditText et_size_of_col_breadth;
+    @BindView(R.id.et_live_load)
+    EditText et_live_load;
+    @BindView(R.id.et_floor_finish)
+    EditText et_floor_finish;
+    @BindView(R.id.et_height_of_col)
+    EditText et_height_of_col;
+//
+    @BindView(R.id.tv_m_f)
+    TextView tv_M_F;
+    @BindView(R.id.tv_depth)
+    TextView tv_depth;
+    @BindView(R.id.tv_Provide_overall_depth)
+    TextView tv_Provide_overall_depth;
+    @BindView(R.id.tv_depth_without_effective_cover)
+    TextView tv_depth_without_effective_cover;
+    @BindView(R.id.tv_dl_for_longer_side)
+    TextView tv_dl_for_longer_side;
+    @BindView(R.id.tv_ds_for_shorter_side)
+    TextView tv_ds_for_shorter_side;
+
 
     //Material property
     double Fck = 20;
@@ -148,10 +211,15 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
     double Takeks;
     double tc;
     double tc_;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flat_slab_rectangular_col);
+        ButterKnife.bind(this);
+//        int decode = Integer.decode("");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4a4aed")));
         calDepthOfSlab();
         loadCalculation();
         stiffnessCalculation();
@@ -160,6 +228,36 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
         ColumnStripsAndMiddleStrips();
         provideReinfrocement();
         checkForTwoWayShear();
+        initview();
+        et_interior_longer_span.setText(String.valueOf(interior_longer_span));
+        et_interior_shorter_span.setText(String.valueOf(interior_shorter_span));
+        et_size_of_col_length.setText(String.valueOf(size_of_col_length));
+        et_size_of_col_breadth.setText(String.valueOf(size_of_col_breadth));
+        et_live_load.setText(String.valueOf(live_load));
+        et_floor_finish.setText(String.valueOf(floor_finish));
+        et_height_of_col.setText(String.valueOf(height_of_col));
+        et_interior_longer_span.addTextChangedListener(new MyTextWatcher());
+        et_interior_shorter_span.addTextChangedListener(new MyTextWatcher());
+        et_size_of_col_length.addTextChangedListener(new MyTextWatcher());
+        et_size_of_col_breadth.addTextChangedListener(new MyTextWatcher());
+        et_live_load.addTextChangedListener(new MyTextWatcher());
+        et_floor_finish.addTextChangedListener(new MyTextWatcher());
+        et_height_of_col.addTextChangedListener(new MyTextWatcher());
+
+    }
+
+    private void initview() {
+        tv_fck.setText(String.valueOf(Fck));
+        tv_fy.setText(String.valueOf(Fy));
+
+
+
+        tv_M_F.setText(String.valueOf(M_F));
+        tv_depth.setText(String.valueOf(depth));
+        tv_Provide_overall_depth.setText(String.valueOf(Provide_overall_depth));
+        tv_depth_without_effective_cover.setText(String.valueOf(depth_without_effective_cover));
+        tv_dl_for_longer_side.setText(String.valueOf(dl_for_longer_side));
+        tv_ds_for_shorter_side.setText(String.valueOf(ds_for_shorter_side));
     }
 
 
@@ -333,13 +431,13 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
     private void checkForTwoWayShear() {
 
         d2 = ds_for_shorter_side / 2;
-        Vu = ((interior_longer_span*interior_shorter_span)-((1165.0/1000.0)*(565.0/1000.0)))*Factored_total_load;
-        b0 = (2*1165)+(2*565) ;
-        tv = (Vu*1000)/(ds_for_shorter_side*b0);
-        ks = 0.5+(size_of_col_breadth/size_of_col_length);
-        Takeks = ks>1? 1: ks;
-        tc =0.25*Math.sqrt(Fck);
-        tc_ = Takeks * tc ;
+        Vu = ((interior_longer_span * interior_shorter_span) - ((1165.0 / 1000.0) * (565.0 / 1000.0))) * Factored_total_load;
+        b0 = (2 * 1165) + (2 * 565);
+        tv = (Vu * 1000) / (ds_for_shorter_side * b0);
+        ks = 0.5 + (size_of_col_breadth / size_of_col_length);
+        Takeks = ks > 1 ? 1 : ks;
+        tc = 0.25 * Math.sqrt(Fck);
+        tc_ = Takeks * tc;
         Log.e("d2--4", "calDepthOfSlab: " + String.valueOf(d2));
         Log.e("Vu--4", "calDepthOfSlab: " + String.valueOf(Vu));
         Log.e("tv4", "calDepthOfSlab: " + String.valueOf(tv));
@@ -350,4 +448,66 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
     }
 
 
+    public void toggleMaterialProperties(View view) {
+        if (ll_material_data.getVisibility() == View.GONE) {
+            ll_material_data.setVisibility(View.VISIBLE);
+            ll_material_text.setVisibility(View.VISIBLE);
+        } else if (ll_material_data.getVisibility() == View.VISIBLE) {
+            ll_material_data.setVisibility(View.GONE);
+            ll_material_text.setVisibility(View.GONE);
+        }
+
+    }
+
+    public void togglepPRELIMINARYDIMENSION(View view) {
+        if (ll_prelimitry_data.getVisibility() == View.GONE) {
+            ll_prelimitry_data.setVisibility(View.VISIBLE);
+            ll_prelimitry_text.setVisibility(View.VISIBLE);
+        } else if (ll_prelimitry_data.getVisibility() == View.VISIBLE) {
+            ll_prelimitry_data.setVisibility(View.GONE);
+            ll_prelimitry_text.setVisibility(View.GONE);
+        }
+    }
+
+    public void toggledosProperties(View view) {
+        if (ll_dos_data.getVisibility() == View.GONE) {
+            ll_dos_data.setVisibility(View.VISIBLE);
+            ll_dos_text.setVisibility(View.VISIBLE);
+        } else if (ll_dos_data.getVisibility() == View.VISIBLE) {
+            ll_dos_data.setVisibility(View.GONE);
+            ll_dos_text.setVisibility(View.GONE);
+        }
+    }
+
+    public class MyTextWatcher implements TextWatcher {
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            Toast.makeText(FlatSlabRectangularCol.this, "hi", Toast.LENGTH_SHORT).show();
+            interior_longer_span = Double.parseDouble(et_interior_longer_span.getText().toString());
+            interior_shorter_span = Double.parseDouble(et_interior_shorter_span.getText().toString());
+            size_of_col_length = Double.parseDouble(et_size_of_col_length.getText().toString());
+            size_of_col_breadth =  Double.parseDouble(et_size_of_col_breadth.getText().toString());
+            live_load =  Double.parseDouble(et_live_load.getText().toString());
+            floor_finish = Double.parseDouble(et_floor_finish.getText().toString());
+            height_of_col = Double.parseDouble(et_height_of_col.getText().toString());
+            calDepthOfSlab();
+            loadCalculation();
+            stiffnessCalculation();
+            checkForCorrection();
+            totalDesignMoment();
+            ColumnStripsAndMiddleStrips();
+            provideReinfrocement();
+            checkForTwoWayShear();
+            initview();
+        }
+    }
 }
