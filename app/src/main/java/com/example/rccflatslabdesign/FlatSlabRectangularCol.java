@@ -1,6 +1,5 @@
 package com.example.rccflatslabdesign;
 
-import android.app.ActionBar;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -45,6 +44,45 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
     @BindView(R.id.ll_dos_data)
     LinearLayout ll_dos_data;
 
+    @BindView(R.id.ll_loadc_text)
+    LinearLayout ll_loadc_text;
+    @BindView(R.id.ll_loadc_data)
+    LinearLayout ll_loadc_data;
+
+    @BindView(R.id.ll_stiff_text)
+    LinearLayout ll_stiff_text;
+    @BindView(R.id.ll_stiff_data)
+    LinearLayout ll_stiff_data;
+
+    @BindView(R.id.ll_corr_text)
+    LinearLayout ll_corr_text;
+    @BindView(R.id.ll_corr_data)
+    LinearLayout ll_corr_data;
+
+    @BindView(R.id.ll_design_text)
+    LinearLayout ll_design_text;
+    @BindView(R.id.ll_design_data)
+    LinearLayout ll_design_data;
+
+    @BindView(R.id.ll_strips_text)
+    LinearLayout ll_strips_text;
+    @BindView(R.id.ll_strips_data)
+    LinearLayout ll_strips_data;
+
+    @BindView(R.id.ll_reinforce_text)
+    LinearLayout ll_reinforce_text;
+    @BindView(R.id.ll_reinforce_data)
+    LinearLayout ll_reinforce_data;
+    @BindView(R.id.ll_reinforce_text2)
+    LinearLayout ll_reinforce_text2;
+    @BindView(R.id.ll_reinforce_data2)
+    LinearLayout ll_reinforce_data2;
+
+    @BindView(R.id.ll_two_text)
+    LinearLayout ll_two_text;
+    @BindView(R.id.ll_two_data)
+    LinearLayout ll_two_data;
+
     @BindView(R.id.et_interior_longer_span)
     EditText et_interior_longer_span;
     @BindView(R.id.et_interior_shorter_span)
@@ -59,7 +97,7 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
     EditText et_floor_finish;
     @BindView(R.id.et_height_of_col)
     EditText et_height_of_col;
-//
+    //
     @BindView(R.id.tv_m_f)
     TextView tv_M_F;
     @BindView(R.id.tv_depth)
@@ -72,6 +110,205 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
     TextView tv_dl_for_longer_side;
     @BindView(R.id.tv_ds_for_shorter_side)
     TextView tv_ds_for_shorter_side;
+
+    @BindView(R.id.tv_Self_weight)
+    TextView tv_Self_weight;
+    @BindView(R.id.tv_Floor_finish)
+    TextView tv_Floor_finish;
+    @BindView(R.id.tv_Live_load_1)
+    TextView tv_Live_load_1;
+    @BindView(R.id.tv_load_total)
+    TextView tv_tv_load_total;
+    @BindView(R.id.tv_Factored_total_load)
+    TextView tv_Factored_total_load;
+    @BindView(R.id.tv_Dead_load)
+    TextView tv_Dead_load;
+    @BindView(R.id.tv_Live_load_2)
+    TextView tv_Live_load_2;
+
+    @BindView(R.id.tv_along_longer_kc)
+    TextView tv_along_longer_kc;
+    @BindView(R.id.tv_along_longer_ks)
+    TextView tv_along_longer_ks;
+    @BindView(R.id.tv_along_longer_alphac)
+    TextView tv_along_longer_alphac;
+    @BindView(R.id.tv_along_shorter_kc)
+    TextView tv_along_shorter_kc;
+    @BindView(R.id.tv_along_shorter_ks)
+    TextView tv_along_shorter_ks;
+    @BindView(R.id.tv_along_shorter_alphac)
+    TextView tv_along_shorter_alphac;
+
+    @BindView(R.id.tv_ratio_ll_dl)
+    TextView tv_ratio_ll_dl;
+    @BindView(R.id.tv_ratio_ll_dl_text)
+    TextView tv_ratio_ll_dl_text;
+
+    @BindView(R.id.tv_along_longer_direction_ln)
+    TextView tv_along_longer_direction_ln;
+    @BindView(R.id.tv_along_longer_direction_Mol)
+    TextView tv_along_longer_direction_Mol;
+    @BindView(R.id.tv_along_shorter_direction_ln)
+    TextView tv_along_shorter_direction_ln;
+    @BindView(R.id.tv_along_shorter_direction_Mol)
+    TextView tv_along_shorter_direction_Mol;
+
+    @BindView(R.id.tv_along_long_span_col_1)
+    TextView tv_along_long_span_col_1;
+    @BindView(R.id.tv_along_long_span_col_2)
+    TextView tv_along_long_span_col_2;
+    @BindView(R.id.tv_along_long_span_width_col)
+    TextView tv_along_long_span_width_col;
+    @BindView(R.id.tv_along_long_span_width_mid)
+    TextView tv_along_long_span_width_mid;
+    @BindView(R.id.tv_along_short_span_col_1)
+    TextView tv_along_short_span_col_1;
+    @BindView(R.id.tv_along_short_span_col_2)
+    TextView tv_along_short_span_col_2;
+    @BindView(R.id.tv_along_short_span_width_col)
+    TextView tv_along_short_span_width_col;
+    @BindView(R.id.tv_along_short_span_width_mid)
+    TextView tv_along_short_span_width_mid;
+
+
+    @BindView(R.id.tv_along_long_span_mu_col_plus)
+    TextView tv_along_long_span_mu_col_plus;
+    @BindView(R.id.tv_along_long_span_ptpersontage_col_plus)
+    TextView tv_along_long_span_ptpersontage_col_plus;
+    @BindView(R.id.tv_along_long_span_takept_col_plus)
+    TextView tv_along_long_span_takept_col_plus;
+    @BindView(R.id.tv_along_long_span_totalast_col_plus)
+    TextView tv_along_long_span_totalast_col_plus;
+    @BindView(R.id.tv_along_long_span_astbyM_col_plus)
+    TextView tv_along_long_span_astbyM_col_plus;
+    @BindView(R.id.tv_along_long_span_provided_col_plus)
+    TextView tv_along_long_span_provided_col_plus;
+    @BindView(R.id.tv_along_long_span_finalAst_col_plus)
+    TextView tv_along_long_span_finalAst_col_plus;
+    @BindView(R.id.tv_along_long_span_mu_mid_plus)
+    TextView tv_along_long_span_mu_mid_plus;
+    @BindView(R.id.tv_along_long_span_ptpersontage_mid_plus)
+    TextView tv_along_long_span_ptpersontage_mid_plus;
+    @BindView(R.id.tv_along_long_span_takept_mid_plus)
+    TextView tv_along_long_span_takept_mid_plus;
+    @BindView(R.id.tv_along_long_span_totalast_mid_plus)
+    TextView tv_along_long_span_totalast_mid_plus;
+    @BindView(R.id.tv_along_long_span_astbyM_mid_plus)
+    TextView tv_along_long_span_astbyM_mid_plus;
+    @BindView(R.id.tv_along_long_span_provided_mid_plus)
+    TextView tv_along_long_span_provided_mid_plus;
+    @BindView(R.id.tv_along_long_span_finalAst_mid_plus)
+    TextView tv_along_long_span_finalAst_mid_plus;
+    @BindView(R.id.tv_along_long_span_col_width)
+    TextView tv_along_long_span_col_width;
+    @BindView(R.id.tv_along_long_span_mu_col_minus)
+    TextView tv_along_long_span_mu_col_minus;
+    @BindView(R.id.tv_along_long_span_ptpersontage_col_minus)
+    TextView tv_along_long_span_ptpersontage_col_minus;
+    @BindView(R.id.tv_along_long_span_takept_col_minus)
+    TextView tv_along_long_span_takept_col_minus;
+    @BindView(R.id.tv_along_long_span_totalast_col_minus)
+    TextView tv_along_long_span_totalast_col_minus;
+    @BindView(R.id.tv_along_long_span_astbyM_col_minus)
+    TextView tv_along_long_span_astbyM_col_minus;
+    @BindView(R.id.tv_along_long_span_provided_col_minus)
+    TextView tv_along_long_span_provided_col_minus;
+    @BindView(R.id.tv_along_long_span_finalAst_col_minus)
+    TextView tv_along_long_span_finalAst_col_minus;
+    @BindView(R.id.tv_along_long_span_mid_width)
+    TextView tv_along_long_span_mid_width;
+    @BindView(R.id.tv_along_long_span_mu_mid_minus)
+    TextView tv_along_long_span_mu_mid_minus;
+    @BindView(R.id.tv_along_long_span_ptpersontage_mid_minus)
+    TextView tv_along_long_span_ptpersontage_mid_minus;
+    @BindView(R.id.tv_along_long_span_takept_mid_minus)
+    TextView tv_along_long_span_takept_mid_minus;
+    @BindView(R.id.tv_along_long_span_totalast_mid_minus)
+    TextView tv_along_long_span_totalast_mid_minus;
+    @BindView(R.id.tv_along_long_span_astbyM_mid_minus)
+    TextView tv_along_long_span_astbyM_mid_minus;
+    @BindView(R.id.tv_along_long_span_provided_mid_minus)
+    TextView tv_along_long_span_provided_mid_minus;
+    @BindView(R.id.tv_along_long_span_finalAst_mid_minus)
+    TextView tv_along_long_span_finalAst_mid_minus;
+
+    @BindView(R.id.tv_along_short_span_mu_col_plus)
+    TextView tv_along_short_span_mu_col_plus;
+    @BindView(R.id.tv_along_short_span_ptpersontage_col_plus)
+    TextView tv_along_short_span_ptpersontage_col_plus;
+    @BindView(R.id.tv_along_short_span_takept_col_plus)
+    TextView tv_along_short_span_takept_col_plus;
+    @BindView(R.id.tv_along_short_span_totalast_col_plus)
+    TextView tv_along_short_span_totalast_col_plus;
+    @BindView(R.id.tv_along_short_span_astbyM_col_plus)
+    TextView tv_along_short_span_astbyM_col_plus;
+    @BindView(R.id.tv_along_short_span_provided_col_plus)
+    TextView tv_along_short_span_provided_col_plus;
+    @BindView(R.id.tv_along_short_span_finalAst_col_plus)
+    TextView tv_along_short_span_finalAst_col_plus;
+    @BindView(R.id.tv_along_short_span_mu_mid_plus)
+    TextView tv_along_short_span_mu_mid_plus;
+    @BindView(R.id.tv_along_short_span_ptpersontage_mid_plus)
+    TextView tv_along_short_span_ptpersontage_mid_plus;
+    @BindView(R.id.tv_along_short_span_takept_mid_plus)
+    TextView tv_along_short_span_takept_mid_plus;
+    @BindView(R.id.tv_along_short_span_totalast_mid_plus)
+    TextView tv_along_short_span_totalast_mid_plus;
+    @BindView(R.id.tv_along_short_span_astbyM_mid_plus)
+    TextView tv_along_short_span_astbyM_mid_plus;
+    @BindView(R.id.tv_along_short_span_provided_mid_plus)
+    TextView tv_along_short_span_provided_mid_plus;
+    @BindView(R.id.tv_along_short_span_finalAst_mid_plus)
+    TextView tv_along_short_span_finalAst_mid_plus;
+    @BindView(R.id.tv_along_short_span_col_width)
+    TextView tv_along_short_span_col_width;
+    @BindView(R.id.tv_along_short_span_mu_col_minus)
+    TextView tv_along_short_span_mu_col_minus;
+    @BindView(R.id.tv_along_short_span_ptpersontage_col_minus)
+    TextView tv_along_short_span_ptpersontage_col_minus;
+    @BindView(R.id.tv_along_short_span_takept_col_minus)
+    TextView tv_along_short_span_takept_col_minus;
+    @BindView(R.id.tv_along_short_span_totalast_col_minus)
+    TextView tv_along_short_span_totalast_col_minus;
+    @BindView(R.id.tv_along_short_span_astbyM_col_minus)
+    TextView tv_along_short_span_astbyM_col_minus;
+    @BindView(R.id.tv_along_short_span_provided_col_minus)
+    TextView tv_along_short_span_provided_col_minus;
+    @BindView(R.id.tv_along_short_span_finalAst_col_minus)
+    TextView tv_along_short_span_finalAst_col_minus;
+    @BindView(R.id.tv_along_short_span_mid_width)
+    TextView tv_along_short_span_mid_width;
+    @BindView(R.id.tv_along_short_span_mu_mid_minus)
+    TextView tv_along_short_span_mu_mid_minus;
+    @BindView(R.id.tv_along_short_span_ptpersontage_mid_minus)
+    TextView tv_along_short_span_ptpersontage_mid_minus;
+    @BindView(R.id.tv_along_short_span_takept_mid_minus)
+    TextView tv_along_short_span_takept_mid_minus;
+    @BindView(R.id.tv_along_short_span_totalast_mid_minus)
+    TextView tv_along_short_span_totalast_mid_minus;
+    @BindView(R.id.tv_along_short_span_astbyM_mid_minus)
+    TextView tv_along_short_span_astbyM_mid_minus;
+    @BindView(R.id.tv_along_short_span_provided_mid_minus)
+    TextView tv_along_short_span_provided_mid_minus;
+    @BindView(R.id.tv_along_short_span_finalAst_mid_minus)
+    TextView tv_along_short_span_finalAst_mid_minus;
+
+    @BindView(R.id.tv_d2)
+    TextView tv_d2;
+    @BindView(R.id.tv_Vu)
+    TextView tv_Vu;
+    @BindView(R.id.tv_b0)
+    TextView tv_b0;
+    @BindView(R.id.tv_tv)
+    TextView tv_tv;
+    @BindView(R.id.tv_ks)
+    TextView tv_ks;
+    @BindView(R.id.tv_tc)
+    TextView tv_tc;
+    @BindView(R.id.tv_tc_)
+    TextView tv_tc_;
+    @BindView(R.id.tv_two_status)
+    TextView tv_two_status;
 
 
     //Material property
@@ -251,13 +488,126 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
         tv_fy.setText(String.valueOf(Fy));
 
 
-
         tv_M_F.setText(String.valueOf(M_F));
         tv_depth.setText(String.valueOf(depth));
         tv_Provide_overall_depth.setText(String.valueOf(Provide_overall_depth));
         tv_depth_without_effective_cover.setText(String.valueOf(depth_without_effective_cover));
         tv_dl_for_longer_side.setText(String.valueOf(dl_for_longer_side));
         tv_ds_for_shorter_side.setText(String.valueOf(ds_for_shorter_side));
+
+        tv_Self_weight.setText(String.valueOf(Self_weight));
+        tv_Floor_finish.setText(String.valueOf(Floor_finish));
+        tv_Live_load_1.setText(String.valueOf(Live_load_1));
+        tv_tv_load_total.setText(String.valueOf(load_total));
+        tv_Factored_total_load.setText(String.valueOf(Factored_total_load));
+        tv_Dead_load.setText(String.valueOf(Dead_load));
+        tv_Live_load_2.setText(String.valueOf(Live_load_2));
+
+        tv_along_longer_kc.setText(String.valueOf(along_longer_kc));
+        tv_along_longer_ks.setText(String.valueOf(along_longer_ks));
+        tv_along_longer_alphac.setText(String.valueOf(along_longer_alphac));
+        tv_along_shorter_kc.setText(String.valueOf(along_shorter_kc));
+        tv_along_shorter_ks.setText(String.valueOf(along_shorter_ks));
+        tv_along_shorter_alphac.setText(String.valueOf(along_shorter_alphac));
+
+        tv_ratio_ll_dl.setText(String.valueOf(ratio_ll_dl));
+        if (ratio_ll_dl <= 0.5) {
+            tv_ratio_ll_dl_text.setText("OK");
+        } else {
+            tv_ratio_ll_dl_text.setText("NOT OK, CORRECTION REQUIRED");
+        }
+
+        tv_along_longer_direction_ln.setText(String.valueOf(along_longer_direction_ln));
+        tv_along_longer_direction_Mol.setText(String.valueOf(along_longer_direction_Mol));
+        tv_along_shorter_direction_ln.setText(String.valueOf(along_shorter_direction_ln));
+        tv_along_shorter_direction_Mol.setText(String.valueOf(along_shorter_direction_Mol));
+
+        tv_along_long_span_col_1.setText(String.valueOf(along_long_span_col_1));
+        tv_along_long_span_col_2.setText(String.valueOf(along_long_span_col_2));
+        tv_along_long_span_width_col.setText(String.valueOf(along_long_span_width_col));
+        tv_along_long_span_width_mid.setText(String.valueOf(along_long_span_width_mid));
+        tv_along_short_span_col_1.setText(String.valueOf(along_short_span_col_1));
+        tv_along_short_span_col_2.setText(String.valueOf(along_short_span_col_2));
+        tv_along_short_span_width_col.setText(String.valueOf(along_short_span_width_col));
+        tv_along_short_span_width_mid.setText(String.valueOf(along_short_span_width_mid));
+
+        tv_along_long_span_mu_col_plus.setText(String.valueOf(along_long_span_mu_col_plus));
+        tv_along_long_span_ptpersontage_col_plus.setText(String.valueOf(along_long_span_ptpersontage_col_plus));
+        tv_along_long_span_takept_col_plus.setText(String.valueOf(along_long_span_takept_col_plus));
+        tv_along_long_span_totalast_col_plus.setText(String.valueOf(along_long_span_totalast_col_plus));
+        tv_along_long_span_astbyM_col_plus.setText(String.valueOf(along_long_span_astbyM_col_plus));
+        tv_along_long_span_provided_col_plus.setText(String.valueOf(along_long_span_provided_col_plus));
+        tv_along_long_span_finalAst_col_plus.setText(String.valueOf(along_long_span_finalAst_col_plus));
+        tv_along_long_span_mu_mid_plus.setText(String.valueOf(along_long_span_mu_mid_plus));
+        tv_along_long_span_ptpersontage_mid_plus.setText(String.valueOf(along_long_span_ptpersontage_mid_plus));
+        tv_along_long_span_takept_mid_plus.setText(String.valueOf(along_long_span_takept_mid_plus));
+        tv_along_long_span_totalast_mid_plus.setText(String.valueOf(along_long_span_totalast_mid_plus));
+        tv_along_long_span_astbyM_mid_plus.setText(String.valueOf(along_long_span_astbyM_mid_plus));
+        tv_along_long_span_provided_mid_plus.setText(String.valueOf(along_long_span_provided_mid_plus));
+        tv_along_long_span_finalAst_mid_plus.setText(String.valueOf(along_long_span_finalAst_mid_plus));
+        tv_along_long_span_col_width.setText(String.valueOf(along_long_span_col_width));
+        tv_along_long_span_mu_col_minus.setText(String.valueOf(along_long_span_mu_col_minus));
+        tv_along_long_span_ptpersontage_col_minus.setText(String.valueOf(along_long_span_ptpersontage_col_minus));
+        tv_along_long_span_takept_col_minus.setText(String.valueOf(along_long_span_takept_col_minus));
+        tv_along_long_span_totalast_col_minus.setText(String.valueOf(along_long_span_totalast_col_minus));
+        tv_along_long_span_astbyM_col_minus.setText(String.valueOf(along_long_span_astbyM_col_minus));
+        tv_along_long_span_provided_col_minus.setText(String.valueOf(along_long_span_provided_col_minus));
+        tv_along_long_span_finalAst_col_minus.setText(String.valueOf(along_long_span_finalAst_col_minus));
+        tv_along_long_span_mid_width.setText(String.valueOf(along_long_span_mid_width));
+        tv_along_long_span_mu_mid_minus.setText(String.valueOf(along_long_span_mu_mid_minus));
+        tv_along_long_span_ptpersontage_mid_minus.setText(String.valueOf(along_long_span_ptpersontage_mid_minus));
+        tv_along_long_span_takept_mid_minus.setText(String.valueOf(along_long_span_takept_mid_minus));
+        tv_along_long_span_totalast_mid_minus.setText(String.valueOf(along_long_span_totalast_mid_minus));
+        tv_along_long_span_astbyM_mid_minus.setText(String.valueOf(along_long_span_astbyM_mid_minus));
+        tv_along_long_span_provided_mid_minus.setText(String.valueOf(along_long_span_provided_mid_minus));
+        tv_along_long_span_finalAst_mid_minus.setText(String.valueOf(along_long_span_finalAst_mid_minus));
+
+
+        tv_along_short_span_mu_col_plus.setText(String.valueOf(along_short_span_mu_col_plus));
+        tv_along_short_span_ptpersontage_col_plus.setText(String.valueOf(along_short_span_ptpersontage_col_plus));
+        tv_along_short_span_takept_col_plus.setText(String.valueOf(along_short_span_takept_col_plus));
+        tv_along_short_span_totalast_col_plus.setText(String.valueOf(along_short_span_totalast_col_plus));
+        tv_along_short_span_astbyM_col_plus.setText(String.valueOf(along_short_span_astbyM_col_plus));
+        tv_along_short_span_provided_col_plus.setText(String.valueOf(along_short_span_provided_col_plus));
+        tv_along_short_span_finalAst_col_plus.setText(String.valueOf(along_short_span_finalAst_col_plus));
+        tv_along_short_span_mu_mid_plus.setText(String.valueOf(along_short_span_mu_mid_plus));
+        tv_along_short_span_ptpersontage_mid_plus.setText(String.valueOf(along_short_span_ptpersontage_mid_plus));
+        tv_along_short_span_takept_mid_plus.setText(String.valueOf(along_short_span_takept_mid_plus));
+        tv_along_short_span_totalast_mid_plus.setText(String.valueOf(along_short_span_totalast_mid_plus));
+        tv_along_short_span_astbyM_mid_plus.setText(String.valueOf(along_short_span_astbyM_mid_plus));
+        tv_along_short_span_provided_mid_plus.setText(String.valueOf(along_short_span_provided_mid_plus));
+        tv_along_short_span_finalAst_mid_plus.setText(String.valueOf(along_short_span_finalAst_mid_plus));
+        tv_along_short_span_col_width.setText(String.valueOf(along_short_span_col_width));
+        tv_along_short_span_mu_col_minus.setText(String.valueOf(along_short_span_mu_col_minus));
+        tv_along_short_span_ptpersontage_col_minus.setText(String.valueOf(along_short_span_ptpersontage_col_minus));
+        tv_along_short_span_takept_col_minus.setText(String.valueOf(along_short_span_takept_col_minus));
+        tv_along_short_span_totalast_col_minus.setText(String.valueOf(along_short_span_totalast_col_minus));
+        tv_along_short_span_astbyM_col_minus.setText(String.valueOf(along_short_span_astbyM_col_minus));
+        tv_along_short_span_provided_col_minus.setText(String.valueOf(along_short_span_provided_col_minus));
+        tv_along_short_span_finalAst_col_minus.setText(String.valueOf(along_short_span_finalAst_col_minus));
+        tv_along_short_span_mid_width.setText(String.valueOf(along_short_span_mid_width));
+        tv_along_short_span_mu_mid_minus.setText(String.valueOf(along_short_span_mu_mid_minus));
+        tv_along_short_span_ptpersontage_mid_minus.setText(String.valueOf(along_short_span_ptpersontage_mid_minus));
+        tv_along_short_span_takept_mid_minus.setText(String.valueOf(along_short_span_takept_mid_minus));
+        tv_along_short_span_totalast_mid_minus.setText(String.valueOf(along_short_span_totalast_mid_minus));
+        tv_along_short_span_astbyM_mid_minus.setText(String.valueOf(along_short_span_astbyM_mid_minus));
+        tv_along_short_span_provided_mid_minus.setText(String.valueOf(along_short_span_provided_mid_minus));
+        tv_along_short_span_finalAst_mid_minus.setText(String.valueOf(along_short_span_finalAst_mid_minus));
+
+        tv_d2.setText(String.valueOf(d2));
+        tv_Vu.setText(String.valueOf(Vu));
+        tv_b0.setText(String.valueOf(b0));
+        tv_tv.setText(String.valueOf(tv));
+        tv_ks.setText(String.valueOf(ks));
+        tv_tc.setText(String.valueOf(tc));
+        tv_tc_.setText(String.valueOf(tc_));
+        if (tv < tc_) {
+            tv_two_status.setText("OK");
+        }
+        else {
+            tv_two_status.setText("NOT OK, Shear reinforecement is required");
+        }
+//        tv_two_status.setText();
     }
 
 
@@ -367,54 +717,36 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
         along_short_span_mol = along_shorter_direction_Mol;
         along_short_span_d = ds_for_shorter_side;
         along_short_span_D = Provide_overall_depth;
-
         along_short_span_col_width = along_short_span_width_col;
         along_short_span_mid_width = along_short_span_width_mid;
-
         along_short_span_mu_col_plus = 0.65 * 0.75 * along_short_span_mol;
         along_short_span_mu_col_minus = 0.35 * 0.6 * along_short_span_mol * 1.01;
         along_short_span_mu_mid_plus = (0.65 * along_short_span_mol) - along_short_span_mu_col_plus;
         along_short_span_mu_mid_minus = (0.35 * along_short_span_mol * 1.01) - along_short_span_mu_col_minus;
-
-
         along_short_span_ptpersontage_col_plus = ((50 * Fck) / Fy) * (1 - Math.sqrt(1 - ((4.6 * along_short_span_mu_col_plus * 1000000) / (Fck * along_short_span_col_width * along_short_span_d * along_short_span_d))));
         along_short_span_ptpersontage_col_minus = ((50 * Fck) / Fy) * (1 - Math.sqrt(1 - ((4.6 * along_short_span_mu_col_minus * 1000000) / (Fck * along_short_span_col_width * along_short_span_d * along_short_span_d))));
         along_short_span_ptpersontage_mid_plus = ((50 * Fck) / Fy) * (1 - Math.sqrt(1 - ((4.6 * along_short_span_mu_mid_plus * 1000000) / (Fck * along_short_span_col_width * along_short_span_d * along_short_span_d))));
         along_short_span_ptpersontage_mid_minus = ((50 * Fck) / Fy) * (1 - Math.sqrt(1 - ((4.6 * along_short_span_mu_mid_minus * 1000000) / (Fck * along_short_span_col_width * along_short_span_d * along_short_span_d))));
-
-
         along_short_span_ptpersontage_col_plus = ((50 * Fck) / Fy) * (1 - Math.sqrt(1 - ((4.6 * along_short_span_mu_col_plus * 1000000) / (Fck * along_short_span_col_width * along_short_span_d * along_short_span_d))));
         along_short_span_ptpersontage_col_minus = ((50 * Fck) / Fy) * (1 - Math.sqrt(1 - ((4.6 * along_short_span_mu_col_minus * 1000000) / (Fck * along_short_span_col_width * along_short_span_d * along_short_span_d))));
         along_short_span_ptpersontage_mid_plus = ((50 * Fck) / Fy) * (1 - Math.sqrt(1 - ((4.6 * along_short_span_mu_mid_plus * 1000000) / (Fck * along_short_span_mid_width * along_short_span_d * along_short_span_d))));
         along_short_span_ptpersontage_mid_minus = ((50 * Fck) / Fy) * (1 - Math.sqrt(1 - ((4.6 * along_short_span_mu_mid_minus * 1000000) / (Fck * along_short_span_mid_width * along_short_span_d * along_short_span_d))));
-
-
         along_short_span_takept_col_plus = Math.max(along_short_span_ptpersontage_col_plus, 0.12);
         along_short_span_takept_col_minus = Math.max(along_short_span_ptpersontage_col_minus, 0.12);
         along_short_span_takept_mid_plus = Math.max(along_short_span_ptpersontage_mid_plus, 0.12);
         along_short_span_takept_mid_minus = Math.max(along_short_span_ptpersontage_mid_minus, 0.12);
-
-
         along_short_span_totalast_col_plus = (along_short_span_takept_col_plus / 100) * along_short_span_col_width * along_short_span_d;
         along_short_span_totalast_col_minus = (along_short_span_takept_col_minus / 100) * along_short_span_col_width * along_short_span_d;
         along_short_span_totalast_mid_plus = (along_short_span_takept_mid_plus / 100) * along_short_span_mid_width * along_short_span_D;
         along_short_span_totalast_mid_minus = (along_short_span_takept_mid_minus / 100) * along_short_span_mid_width * along_short_span_D;
-
-//        along_short_span_totalast_mid_plus = (along_short_span_takept_mid_plus/100) * along_short_span_mid_width *J95;
-//        along_short_span_totalast_mid_minus = (along_short_span_takept_mid_minus / 100) * along_short_span_mid_width * along_short_span_d;
-
-
         along_short_span_astbyM_col_plus = along_short_span_totalast_col_plus / (along_short_span_col_width / 1000);
         along_short_span_astbyM_col_minus = along_short_span_totalast_col_minus / (along_short_span_col_width / 1000);
         along_short_span_astbyM_mid_plus = along_short_span_totalast_mid_plus / (along_short_span_mid_width / 1000);
         along_short_span_astbyM_mid_minus = along_short_span_totalast_mid_minus / (along_short_span_mid_width / 1000);
-
-
         along_short_span_provided_col_plus = centralStore.ROUNDDOWN((((PI / 4) * pow(16, 2)) / along_short_span_astbyM_col_plus) * 1000, -1);
         along_short_span_provided_col_minus = centralStore.ROUNDDOWN((((PI / 4) * pow(10, 2)) / along_short_span_astbyM_col_minus) * 1000, -1);
         along_short_span_provided_mid_plus = centralStore.ROUNDDOWN((((PI / 4) * pow(8, 2)) / along_short_span_astbyM_mid_plus) * 1000, -1);
         along_short_span_provided_mid_minus = centralStore.ROUNDDOWN((((PI / 4) * pow(8, 2)) / along_short_span_astbyM_mid_minus) * 1000, -1);
-
         along_short_span_finalAst_col_plus = Math.round((((PI / 4) * Math.pow(16, 2)) / along_short_span_provided_col_plus) * 1000);
         along_short_span_finalAst_col_minus = Math.round((((PI / 4) * Math.pow(10, 2)) / along_short_span_provided_col_minus) * 1000);
         along_short_span_finalAst_mid_plus = Math.round((((PI / 4) * Math.pow(8, 2)) / along_short_span_provided_mid_plus) * 1000);
@@ -479,6 +811,80 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
         }
     }
 
+    public void toggleloadcProperties(View view) {
+        if (ll_loadc_data.getVisibility() == View.GONE) {
+            ll_loadc_data.setVisibility(View.VISIBLE);
+            ll_loadc_text.setVisibility(View.VISIBLE);
+        } else if (ll_loadc_data.getVisibility() == View.VISIBLE) {
+            ll_loadc_data.setVisibility(View.GONE);
+            ll_loadc_text.setVisibility(View.GONE);
+        }
+    }
+
+    public void togglestiffProperties(View view) {
+        if (ll_stiff_data.getVisibility() == View.GONE) {
+            ll_stiff_data.setVisibility(View.VISIBLE);
+            ll_stiff_text.setVisibility(View.VISIBLE);
+        } else if (ll_stiff_data.getVisibility() == View.VISIBLE) {
+            ll_stiff_data.setVisibility(View.GONE);
+            ll_stiff_text.setVisibility(View.GONE);
+        }
+    }
+
+    public void togglecorrProperties(View view) {
+        if (ll_corr_data.getVisibility() == View.GONE) {
+            ll_corr_data.setVisibility(View.VISIBLE);
+            ll_corr_text.setVisibility(View.VISIBLE);
+        } else if (ll_corr_data.getVisibility() == View.VISIBLE) {
+            ll_corr_data.setVisibility(View.GONE);
+            ll_corr_text.setVisibility(View.GONE);
+        }
+    }
+
+    public void toggledesignProperties(View view) {
+        if (ll_design_data.getVisibility() == View.GONE) {
+            ll_design_data.setVisibility(View.VISIBLE);
+            ll_design_text.setVisibility(View.VISIBLE);
+        } else if (ll_design_data.getVisibility() == View.VISIBLE) {
+            ll_design_data.setVisibility(View.GONE);
+            ll_design_text.setVisibility(View.GONE);
+        }
+    }
+
+    public void togglestripsProperties(View view) {
+        if (ll_strips_data.getVisibility() == View.GONE) {
+            ll_strips_data.setVisibility(View.VISIBLE);
+            ll_strips_text.setVisibility(View.VISIBLE);
+        } else if (ll_strips_data.getVisibility() == View.VISIBLE) {
+            ll_strips_data.setVisibility(View.GONE);
+            ll_strips_text.setVisibility(View.GONE);
+        }
+    }
+
+    public void togglereinforceProperties(View view) {
+        if (ll_reinforce_data.getVisibility() == View.GONE) {
+            ll_reinforce_data.setVisibility(View.VISIBLE);
+            ll_reinforce_text.setVisibility(View.VISIBLE);
+            ll_reinforce_data2.setVisibility(View.VISIBLE);
+            ll_reinforce_text2.setVisibility(View.VISIBLE);
+        } else if (ll_reinforce_data.getVisibility() == View.VISIBLE) {
+            ll_reinforce_data.setVisibility(View.GONE);
+            ll_reinforce_text.setVisibility(View.GONE);
+            ll_reinforce_data2.setVisibility(View.GONE);
+            ll_reinforce_text2.setVisibility(View.GONE);
+        }
+    }
+
+    public void toggletwoProperties(View view) {
+        if (ll_two_data.getVisibility() == View.GONE) {
+            ll_two_data.setVisibility(View.VISIBLE);
+            ll_two_text.setVisibility(View.VISIBLE);
+        } else if (ll_two_data.getVisibility() == View.VISIBLE) {
+            ll_two_data.setVisibility(View.GONE);
+            ll_two_text.setVisibility(View.GONE);
+        }
+    }
+
     public class MyTextWatcher implements TextWatcher {
 
         @Override
@@ -495,8 +901,8 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
             interior_longer_span = Double.parseDouble(et_interior_longer_span.getText().toString());
             interior_shorter_span = Double.parseDouble(et_interior_shorter_span.getText().toString());
             size_of_col_length = Double.parseDouble(et_size_of_col_length.getText().toString());
-            size_of_col_breadth =  Double.parseDouble(et_size_of_col_breadth.getText().toString());
-            live_load =  Double.parseDouble(et_live_load.getText().toString());
+            size_of_col_breadth = Double.parseDouble(et_size_of_col_breadth.getText().toString());
+            live_load = Double.parseDouble(et_live_load.getText().toString());
             floor_finish = Double.parseDouble(et_floor_finish.getText().toString());
             height_of_col = Double.parseDouble(et_height_of_col.getText().toString());
             calDepthOfSlab();

@@ -10,7 +10,7 @@
             android:id="@+id/rel_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="40px"
+            android:padding="20px"
 
             >
 
@@ -80,7 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/rel_1"
-            android:padding="40px"
+            android:padding="20px"
 
             >
 
@@ -233,13 +233,12 @@
 
         </RelativeLayout>
 
-
         <RelativeLayout
             android:id="@+id/rel_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/rel_2"
-            android:padding="40px"
+            android:padding="20px"
 
             >
 
@@ -374,6 +373,1626 @@
                     android:id="@+id/tv_ds_for_shorter_side"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel_3"
+            android:padding="20px"
+
+            >
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:background="@color/grey"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:onClick="toggleloadcProperties"
+                android:padding="10px"
+                android:text="LOAD CALCULATIONS	"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <LinearLayout
+                android:id="@+id/ll_loadc_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv4"
+                android:layout_marginEnd="350px"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Self weight" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Floor finish" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Live load" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Factored total load  W" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dead load (D.L.)" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Live load (L.L.)" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_loadc_data"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv4"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_Self_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_Floor_finish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_Live_load_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_load_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_Factored_total_load"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_Dead_load"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_Live_load_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel_4"
+            android:padding="20px"
+
+            >
+
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:background="@color/grey"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:onClick="togglestiffProperties"
+                android:padding="10px"
+                android:text="CALCULATION OF STIFFNESSES AND αc	"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <LinearLayout
+                android:id="@+id/ll_stiff_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv5"
+                android:layout_marginEnd="350px"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Along longer dimension:		" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="For columns  kc=4EI/L" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="For slabs  ks=4EI/L" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="αc=kc/ks"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Along Shorter dimension:		" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="For columns kc=4EI/L" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="For slabs ks=4EI/L" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="αc=kc/ks"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_stiff_data"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv5"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_longer_kc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_longer_ks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_longer_alphac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_shorter_kc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_shorter_ks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_shorter_alphac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel_5"
+            android:padding="20px"
+
+            >
+
+            <TextView
+                android:id="@+id/tv6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:background="@color/grey"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:onClick="togglecorrProperties"
+                android:padding="10px"
+                android:text="CHECK FOR CORRECTION DUE TO PATTERN LOADING									"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <LinearLayout
+                android:id="@+id/ll_corr_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv6"
+                android:layout_marginEnd="350px"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ratio,  L.L./D.L.	" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_corr_data"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv6"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_ratio_ll_dl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_ratio_ll_dl_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="60px"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel_6"
+            android:padding="20px">
+
+            <TextView
+                android:id="@+id/tv7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:background="@color/grey"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:onClick="toggledesignProperties"
+                android:padding="10px"
+                android:text="TOTAL DESIGN MOMENTS"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <LinearLayout
+                android:id="@+id/ll_design_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv7"
+                android:layout_marginEnd="350px"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Along longer direction:		"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ln (clear span along l₁)"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mol=(w*l₂*ln²)/8		"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Along Shorter direction:		"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ln (clear span along l₁)	"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mol=(w*l₂*ln²)/8	"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_design_data"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv7"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_longer_direction_ln"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_longer_direction_Mol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_shorter_direction_ln"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_shorter_direction_Mol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel_7"
+            android:padding="20px">
+
+            <TextView
+                android:id="@+id/tv8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:background="@color/grey"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:onClick="togglestripsProperties"
+                android:padding="10px"
+                android:text="COLUMN STRIPS AND MIDDLE STRIPS	"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <LinearLayout
+                android:id="@+id/ll_strips_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv8"
+                android:layout_marginEnd="350px"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Along long span:		"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Column strips	"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(i) 2*(0.25*l₁)				"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(ii) 2*(0.25*l₂)			"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Provide "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Width of column strip			"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Width of middle strip			"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Along short span:		"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Column strips			"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(i) 2*(0.25*l₁)		"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(ii) 2*(0.25*l₂)		"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Provide	"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Width of column strip	"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Width of middle strip	"
+                    android:textAlignment="center" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_strips_data"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv8"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_long_span_col_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_long_span_col_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_long_span_width_col"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_long_span_width_mid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_short_span_col_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_short_span_col_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_short_span_width_col"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_along_short_span_width_mid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel_8"
+            android:padding="20px">
+
+            <TextView
+                android:id="@+id/tv9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:background="@color/grey"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:onClick="togglereinforceProperties"
+                android:padding="10px"
+                android:text="PROVIDE REINFORCEMENT		"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <LinearLayout
+                android:id="@+id/ll_reinforce_data"
+                android:layout_width="250px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv9"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mu" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="pt%" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Take pt" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total Ast=" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ast/m" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Provided" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ast" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mu" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="pt%" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Take pt" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total Ast=" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ast/m" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Provided" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ast" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_reinforce_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv9"
+                android:layout_marginStart="250px"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Along long span:		"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Column strips	"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Width				" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="-Ve		" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_mu_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="137.1  kN*m" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_ptpersontage_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.5617%	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_takept_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.5617		" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_totalast_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2458	mm²	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_astbyM_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="983.0160454	mm²	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_provided_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="16 dia. @ 200 mm c/c	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_finalAst_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1005	" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Middle strip		"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Width" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_mu_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="45.7	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_ptpersontage_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.17152	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_takept_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.17	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_totalast_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="750.41	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_astbyM_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="300.162326	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_provided_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="8 dia. @	160 mm c/c" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_finalAst_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="314	" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Along long span:		"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Column strips	"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_col_width"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2500 mm			" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="+Ve		" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_mu_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="59.1  kN*m" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_ptpersontage_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.22420%	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_takept_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.224		" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_totalast_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="980	mm²	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_astbyM_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="392.3490	mm²	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_provided_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10 dia. @ 200 mm c/c	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_finalAst_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="393	" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Middle strip		"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_mid_width"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2500 mm" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_mu_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="39.4	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_ptpersontage_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.14700	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_takept_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.147	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_totalast_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="643.41	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_astbyM_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="257.24	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_provided_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="8 dia. @	190 mm c/c" />
+
+                    <TextView
+                        android:id="@+id/tv_along_long_span_finalAst_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="265	" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_reinforce_data2"
+                android:layout_width="250px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_reinforce_data"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mu" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="pt%" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Take pt" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total Ast=" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ast/m" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Provided" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ast" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mu" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="pt%" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Take pt" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total Ast=" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ast/m" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Provided" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ast" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_reinforce_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_reinforce_data"
+                android:layout_marginStart="250px"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Along long span:		"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Column strips	"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Width				" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="-Ve		" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_mu_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="137.1  kN*m" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_ptpersontage_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.5617%	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_takept_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.5617		" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_totalast_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2458	mm²	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_astbyM_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="983.0160454	mm²	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_provided_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="16 dia. @ 200 mm c/c	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_finalAst_col_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1005	" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Middle strip		"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Width" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_mu_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="45.7	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_ptpersontage_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.17152	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_takept_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.17	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_totalast_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="750.41	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_astbyM_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="300.162326	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_provided_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="8 dia. @	160 mm c/c" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_finalAst_mid_plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="314	" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Along long span:		"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Column strips	"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_col_width"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2500 mm			" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="+Ve		" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_mu_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="59.1  kN*m" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_ptpersontage_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.22420%	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_takept_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.224		" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_totalast_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="980	mm²	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_astbyM_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="392.3490	mm²	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_provided_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10 dia. @ 200 mm c/c	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_finalAst_col_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="393	" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Middle strip		"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_mid_width"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2500 mm" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_mu_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="39.4	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_ptpersontage_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.14700	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_takept_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0.147	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_totalast_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="643.41	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_astbyM_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="257.24	" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_provided_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="8 dia. @	190 mm c/c" />
+
+                    <TextView
+                        android:id="@+id/tv_along_short_span_finalAst_mid_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="265	" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel_9"
+            android:padding="20px">
+
+            <TextView
+                android:id="@+id/tv10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:background="@color/grey"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:onClick="toggletwoProperties"
+                android:padding="10px"
+                android:text="CHECK FOR TWO WAY SHEAR"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <LinearLayout
+                android:id="@+id/ll_two_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv10"
+                android:layout_marginEnd="350px"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Check for two way shear is made along longer direction.											"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The critical section for shear is taken at distance d/2 from face of column.										"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D/2				" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vu			" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="b₀=total length of critical section" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="τᵥ=Vᵤ/(b₀*d)		" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ks=0.5+(breadth/length)		" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Take ks=		" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="τc=0.25*√fck			" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="τc'=ks*τc		" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="		" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_two_data"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv10"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_d2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_Vu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_b0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_ks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_Takeks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_tc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_tc_"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_two_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="60px"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
