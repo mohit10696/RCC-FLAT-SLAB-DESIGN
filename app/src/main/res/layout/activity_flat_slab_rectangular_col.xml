@@ -1,6 +1,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,6 +22,7 @@
                 android:layout_marginBottom="10px"
                 android:background="@color/grey"
                 android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:maxLines="1"
                 android:onClick="toggleMaterialProperties"
                 android:padding="20px"
                 android:text="MATERIAL PROPERTIES"
@@ -39,12 +41,16 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fck   (Grade of concrete)" />
+                    android:maxLines="1"
+                    android:text="Fck   (Grade of concrete) ="
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fy" />
+                    android:maxLines="1"
+                    android:text="Fy"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -61,12 +67,14 @@
                 <TextView
                     android:id="@+id/tv_fck"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_fy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="" />
 
 
@@ -91,6 +99,7 @@
                 android:layout_marginBottom="10px"
                 android:background="@color/grey"
                 android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:maxLines="1"
                 android:onClick="togglepPRELIMINARYDIMENSION"
                 android:padding="10px"
                 android:text="PRELIMINARY DIMENSION	"
@@ -108,69 +117,86 @@
 
                 <TextView
                     android:layout_width="match_parent"
+
                     android:layout_height="wrap_content"
-                    android:text="INRERIOR PANEL: 	"
+                    android:maxLines="1"
+                    android:text="INTERIOR PANEL: 	"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="120px"
                     android:gravity="center"
-                    android:text="LONGER SPAN"
+                    android:maxLines="1"
+                    android:text="LONGER SPAN ="
                     android:textAlignment="center"
-                    android:textSize="40px" />
+                    android:textSize="40px"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="120px"
                     android:gravity="center"
-                    android:text="SHORTER SPAN"
+                    android:maxLines="1"
+                    android:text="SHORTER SPAN ="
                     android:textAlignment="center"
-                    android:textSize="40px" />
+                    android:textSize="40px"
+                    android:textStyle="bold" />
 
                 <TextView
-
                     android:layout_width="match_parent"
+
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="SIZE OF COLUMN:"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
+                    android:layout_height="150px"
                     android:gravity="center"
-                    android:text="LENGTH"
+                    android:maxLines="1"
+                    android:text="LENGTH = "
                     android:textAlignment="center"
-                    android:textSize="40px" />
+                    android:textSize="40px"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
+                    android:layout_height="150px"
                     android:gravity="center"
-                    android:text="BREADTH"
+                    android:maxLines="1"
+                    android:text="BREADTH ="
                     android:textAlignment="center"
-                    android:textSize="40px" />
+                    android:textSize="40px"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
+                    android:layout_height="150px"
                     android:gravity="center"
-                    android:text="LIVE LOAD"
-                    android:textSize="40px" />
+                    android:maxLines="1"
+                    android:text="LIVE LOAD ="
+                    android:textSize="40px"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
+                    android:layout_height="150px"
                     android:gravity="center_vertical"
-                    android:text="FLOOR FINISH"
-                    android:textSize="40px" />
+                    android:maxLines="1"
+                    android:text="FLOOR FINISH="
+                    android:textSize="40px"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
+                    android:layout_height="150px"
                     android:gravity="center_vertical"
-                    android:text="HEIGHT OF COLUMN"
-                    android:textSize="40px" />
+                    android:maxLines="1"
+                    android:text="HEIGHT OF COLUMN="
+                    android:textSize="40px"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -184,50 +210,91 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <EditText
-                    android:id="@+id/et_interior_longer_span"
+                <com.google.android.material.textfield.TextInputLayout
+                    app:suffixText="m"
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
-                    android:layout_marginTop="50px"
-                    android:inputType="numberDecimal" />
+                    android:layout_height="150px">
 
-                <EditText
-                    android:id="@+id/et_interior_shorter_span"
+                    <EditText
+                        android:id="@+id/et_interior_longer_span"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    app:suffixText="m"
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
-                    android:inputType="numberDecimal" />
+                    android:layout_height="150px">
 
-                <EditText
-                    android:id="@+id/et_size_of_col_length"
+                    <EditText
+                        android:id="@+id/et_interior_shorter_span"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    app:suffixText="mm"
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
-                    android:layout_marginTop="50px"
-                    android:inputType="numberDecimal" />
+                    android:layout_height="150px">
 
-                <EditText
-                    android:id="@+id/et_size_of_col_breadth"
+                    <EditText
+                        android:id="@+id/et_size_of_col_length"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    app:suffixText="mm"
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
-                    android:inputType="numberDecimal" />
+                    android:layout_height="150px">
 
-                <EditText
-                    android:id="@+id/et_live_load"
+                    <EditText
+                        android:id="@+id/et_size_of_col_breadth"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    app:suffixText="kN/m²"
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
-                    android:inputType="numberDecimal" />
+                    android:layout_height="150px">
 
-                <EditText
-                    android:id="@+id/et_floor_finish"
+                    <EditText
+                        android:id="@+id/et_live_load"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    app:suffixText="kN/m²"
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
-                    android:inputType="numberDecimal" />
+                    android:layout_height="150px">
 
-                <EditText
-                    android:id="@+id/et_height_of_col"
+                    <EditText
+                        android:id="@+id/et_floor_finish"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    app:suffixText="m"
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
-                    android:inputType="numberDecimal" />
+                    android:layout_height="150px">
 
+                    <EditText
+                        android:id="@+id/et_height_of_col"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
 
@@ -249,6 +316,7 @@
                 android:layout_marginBottom="10px"
                 android:background="@color/grey"
                 android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:maxLines="1"
                 android:onClick="toggledosProperties"
                 android:padding="10px"
                 android:text="DEPTH OF SLAB	"
@@ -267,52 +335,75 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="l/d=26*M.F. (l=longer span)" />
+                    android:maxLines="1"
+                    android:text="l/d=26*M.F. (l=longer span) ="
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Assume pt= 0.40%" />
+                    android:maxLines="1"
+                    android:text="Assume pt= 0.40%"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="M.F. = 1/(1+0.625Log pt)" />
+                    android:maxLines="1"
+                    android:text="M.F. = 1/(1+0.625Log pt)"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Depth (d)" />
+                    android:maxLines="1"
+                    android:text="Depth (d)"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Provide overall depth (D)" />
+                    android:maxLines="1"
+                    android:text="Provide overall depth (D)"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Assume Φ = 10mm" />
+                    android:maxLines="1"
+                    android:text="Assume Φ = 10mm"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Clear cover = 20mm" />
+                    android:maxLines="1"
+                    android:text="Clear cover = 20mm"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="d (depth without effective cover)		" />
+                    android:maxLines="1"
+                    android:text="d (depth without effective cover)		"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="dl (for longer side)	" />
+                    android:maxLines="1"
+                    android:text="dl (for longer side)	"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ds (for shorter side)	" />
+                    android:maxLines="1"
+                    android:text="ds (for shorter side)	"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -327,52 +418,62 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_m_f"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_depth"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_Provide_overall_depth"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_depth_without_effective_cover"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_dl_for_longer_side"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_ds_for_shorter_side"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
 
             </LinearLayout>
@@ -396,6 +497,7 @@
                 android:layout_marginBottom="10px"
                 android:background="@color/grey"
                 android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:maxLines="1"
                 android:onClick="toggleloadcProperties"
                 android:padding="10px"
                 android:text="LOAD CALCULATIONS	"
@@ -414,38 +516,52 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Self weight" />
+                    android:maxLines="1"
+                    android:text="Self weight"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Floor finish" />
+                    android:maxLines="1"
+                    android:text="Floor finish"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Live load" />
+                    android:maxLines="1"
+                    android:text="Live load"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Total"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Factored total load  W" />
+                    android:maxLines="1"
+                    android:text="Factored total load  W"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Dead load (D.L.)" />
+                    android:maxLines="1"
+                    android:text="Dead load (D.L.)"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Live load (L.L.)" />
+                    android:maxLines="1"
+                    android:text="Live load (L.L.)"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -462,37 +578,44 @@
                 <TextView
                     android:id="@+id/tv_Self_weight"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_Floor_finish"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_Live_load_1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_load_total"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_Factored_total_load"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_Dead_load"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_Live_load_2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
 
             </LinearLayout>
@@ -516,6 +639,7 @@
                 android:layout_marginBottom="10px"
                 android:background="@color/grey"
                 android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:maxLines="1"
                 android:onClick="togglestiffProperties"
                 android:padding="10px"
                 android:text="CALCULATION OF STIFFNESSES AND αc	"
@@ -534,47 +658,64 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Along longer dimension:		" />
+                    android:maxLines="1"
+                    android:text="Along longer dimension:		"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="For columns  kc=4EI/L" />
+                    android:maxLines="1"
+                    android:text="For columns  kc=4EI/L"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="For slabs  ks=4EI/L" />
+                    android:maxLines="1"
+                    android:text="For slabs  ks=4EI/L"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="αc=kc/ks"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Along Shorter dimension:		" />
+                    android:maxLines="1"
+                    android:text="Along Shorter dimension:		"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="For columns kc=4EI/L" />
+                    android:maxLines="1"
+                    android:text="For columns kc=4EI/L"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="For slabs ks=4EI/L" />
+                    android:maxLines="1"
+                    android:text="For slabs ks=4EI/L"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="αc=kc/ks"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/ll_stiff_data"
@@ -586,44 +727,52 @@
                 android:visibility="gone">
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_longer_kc"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_longer_ks"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_longer_alphac"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_shorter_kc"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_shorter_ks"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_shorter_alphac"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
 
             </LinearLayout>
@@ -647,6 +796,7 @@
                 android:layout_marginBottom="10px"
                 android:background="@color/grey"
                 android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:maxLines="1"
                 android:onClick="togglecorrProperties"
                 android:padding="10px"
                 android:text="CHECK FOR CORRECTION DUE TO PATTERN LOADING									"
@@ -665,7 +815,18 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ratio,  L.L./D.L.	" />
+                    android:maxLines="1"
+                    android:text="Ratio,  L.L./D.L.	"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_ratio_ll_dl_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textSize="60px"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -682,14 +843,8 @@
                 <TextView
                     android:id="@+id/tv_ratio_ll_dl"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/tv_ratio_ll_dl_text"
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="60px"
-                    android:textStyle="bold" />
+                    android:maxLines="1" />
 
 
             </LinearLayout>
@@ -711,6 +866,7 @@
                 android:layout_marginBottom="10px"
                 android:background="@color/grey"
                 android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:maxLines="1"
                 android:onClick="toggledesignProperties"
                 android:padding="10px"
                 android:text="TOTAL DESIGN MOMENTS"
@@ -728,45 +884,59 @@
 
                 <TextView
                     android:layout_width="match_parent"
+
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Along longer direction:		"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
+
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="ln (clear span along l₁)"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Mol=(w*l₂*ln²)/8		"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text=""
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
+
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Along Shorter direction:		"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="ln (clear span along l₁)	"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Mol=(w*l₂*ln²)/8	"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -781,38 +951,45 @@
                 android:visibility="gone">
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_longer_direction_ln"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_longer_direction_Mol"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_shorter_direction_ln"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_shorter_direction_Mol"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
 
             </LinearLayout>
@@ -834,6 +1011,7 @@
                 android:layout_marginBottom="10px"
                 android:background="@color/grey"
                 android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:maxLines="1"
                 android:onClick="togglestripsProperties"
                 android:padding="10px"
                 android:text="COLUMN STRIPS AND MIDDLE STRIPS	"
@@ -852,86 +1030,109 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Along long span:		"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Column strips	"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="(i) 2*(0.25*l₁)				"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="(ii) 2*(0.25*l₂)			"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
+
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Provide "
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Width of column strip			"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Width of middle strip			"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Along short span:		"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Column strips			"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="(i) 2*(0.25*l₁)		"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="(ii) 2*(0.25*l₂)		"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Provide	"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Width of column strip	"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="Width of middle strip	"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -946,73 +1147,87 @@
                 android:visibility="gone">
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_long_span_col_1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_long_span_col_2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_long_span_width_col"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_long_span_width_mid"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_short_span_col_1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_short_span_col_2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_short_span_width_col"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_along_short_span_width_mid"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
 
             </LinearLayout>
@@ -1034,6 +1249,7 @@
                 android:layout_marginBottom="10px"
                 android:background="@color/grey"
                 android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:maxLines="1"
                 android:onClick="togglereinforceProperties"
                 android:padding="10px"
                 android:text="PROVIDE REINFORCEMENT		"
@@ -1052,115 +1268,161 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="" />
+                    android:maxLines="1"
+                    android:text=""
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="" />
+                    android:maxLines="1"
+                    android:text=""
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="" />
-
-                <TextView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:maxLines="1"
+                    android:text=""
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Mu" />
+
+                    android:maxLines="1"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="pt%" />
+                    android:maxLines="1"
+                    android:text="Mu"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Take pt" />
+                    android:maxLines="1"
+                    android:text="pt%"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Total Ast=" />
+                    android:maxLines="1"
+                    android:text="Take pt"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ast/m" />
+                    android:maxLines="1"
+                    android:text="Total Ast="
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Provided" />
+
+                    android:maxLines="1"
+                    android:text="Ast/m"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ast" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="" />
+                    android:maxLines="1"
+                    android:text="Provided"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Mu" />
+                    android:maxLines="1"
+                    android:text="Ast"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="pt%" />
+                    android:maxLines="1"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Take pt" />
+                    android:maxLines="1"
+                    android:text=""
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Total Ast=" />
+                    android:maxLines="1"
+                    android:text="Mu"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ast/m" />
+                    android:maxLines="1"
+                    android:text="pt%"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Provided" />
+                    android:maxLines="1"
+                    android:text="Take pt"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ast" />
+                    android:maxLines="1"
+                    android:text="Total Ast="
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Ast/m"
+                    android:textStyle="bold" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Provided"
+                    android:textStyle="bold" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Ast"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:maxLines="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -1185,118 +1447,141 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="Along long span:		"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="Column strips	"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Width				" />
+                        android:maxLines="1"
+                        android:text="Width = 				"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-Ve		" />
+                        android:maxLines="1"
+                        android:text="-Ve		"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_mu_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="137.1  kN*m" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_ptpersontage_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.5617%	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_takept_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.5617		" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_totalast_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="2458	mm²	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_astbyM_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="983.0160454	mm²	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_provided_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="16 dia. @ 200 mm c/c	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_finalAst_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="1005	" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="Middle strip		"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="Width" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_mu_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="45.7	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_ptpersontage_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.17152	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_takept_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.17	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_totalast_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="750.41	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_astbyM_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="300.162326	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_provided_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="8 dia. @	160 mm c/c" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_finalAst_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="314	" />
 
 
@@ -1311,13 +1596,17 @@
 
                     <TextView
                         android:layout_width="match_parent"
+
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="Along long span:		"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
+
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="Column strips	"
                         android:textStyle="bold" />
 
@@ -1325,58 +1614,69 @@
                         android:id="@+id/tv_along_long_span_col_width"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="2500 mm			" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="+Ve		" />
+                        android:maxLines="1"
+                        android:text="+Ve		"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_mu_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="59.1  kN*m" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_ptpersontage_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.22420%	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_takept_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.224		" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_totalast_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="980	mm²	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_astbyM_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="392.3490	mm²	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_provided_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="10 dia. @ 200 mm c/c	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_finalAst_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="393	" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="Middle strip		"
                         android:textStyle="bold" />
 
@@ -1384,48 +1684,56 @@
                         android:id="@+id/tv_along_long_span_mid_width"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="2500 mm" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_mu_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="39.4	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_ptpersontage_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.14700	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_takept_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.147	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_totalast_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="643.41	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_astbyM_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="257.24	" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_provided_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="8 dia. @	190 mm c/c" />
 
                     <TextView
                         android:id="@+id/tv_along_long_span_finalAst_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="265	" />
 
 
@@ -1445,115 +1753,153 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="" />
-
-                <TextView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Mu" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="pt%" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Take pt" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Total Ast=" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ast/m" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Provided" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ast" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:text="" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Mu" />
 
-                <TextView
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="pt%" />
+                    android:maxLines="1" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Take pt" />
+                    android:maxLines="1"
+                    android:text="Mu"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Total Ast=" />
+                    android:maxLines="1"
+                    android:text="pt%"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ast/m" />
+                    android:maxLines="1"
+                    android:text="Take pt"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Provided" />
+                    android:maxLines="1"
+                    android:text="Total Ast="
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ast" />
+                    android:maxLines="1"
+                    android:text="Ast/m"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Provided"
+                    android:textStyle="bold" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Ast"
+                    android:textStyle="bold" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Mu"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="pt%"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Take pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Total Ast="
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Ast/m"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Provided"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Ast"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
             </LinearLayout>
 
@@ -1578,118 +1924,141 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Along long span:		"
+                        android:maxLines="1"
+                        android:text="Along Short span:		"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
+
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="Column strips	"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Width				" />
+                        android:maxLines="1"
+                        android:text="Width				"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-Ve		" />
+                        android:maxLines="1"
+                        android:text="-Ve		"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_mu_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="137.1  kN*m" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_ptpersontage_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.5617%	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_takept_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.5617		" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_totalast_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="2458	mm²	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_astbyM_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="983.0160454	mm²	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_provided_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="16 dia. @ 200 mm c/c	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_finalAst_col_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="1005	" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="Middle strip		"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="Width" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_mu_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="45.7	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_ptpersontage_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.17152	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_takept_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.17	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_totalast_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="750.41	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_astbyM_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="300.162326	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_provided_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="8 dia. @	160 mm c/c" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_finalAst_mid_plus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="314	" />
 
 
@@ -1704,72 +2073,88 @@
 
                     <TextView
                         android:layout_width="match_parent"
+
                         android:layout_height="wrap_content"
-                        android:text="Along long span:		"
+                        android:maxLines="1"
+                        android:text="Along Short span:		"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
+
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="Column strips	"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_col_width"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="2500 mm			" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="+Ve		" />
+                        android:maxLines="1"
+                        android:text="+Ve		"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_mu_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="59.1  kN*m" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_ptpersontage_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.22420%	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_takept_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.224		" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_totalast_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="980	mm²	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_astbyM_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="392.3490	mm²	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_provided_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="10 dia. @ 200 mm c/c	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_finalAst_col_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="393	" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="Middle strip		"
                         android:textStyle="bold" />
 
@@ -1777,48 +2162,56 @@
                         android:id="@+id/tv_along_short_span_mid_width"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="2500 mm" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_mu_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="39.4	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_ptpersontage_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.14700	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_takept_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="0.147	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_totalast_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="643.41	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_astbyM_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="257.24	" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_provided_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="8 dia. @	190 mm c/c" />
 
                     <TextView
                         android:id="@+id/tv_along_short_span_finalAst_mid_minus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:text="265	" />
 
 
@@ -1843,6 +2236,7 @@
                 android:layout_marginBottom="10px"
                 android:background="@color/grey"
                 android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:maxLines="1"
                 android:onClick="toggletwoProperties"
                 android:padding="10px"
                 android:text="CHECK FOR TWO WAY SHEAR"
@@ -1861,59 +2255,88 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="2"
                     android:text="Check for two way shear is made along longer direction.											"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="2"
                     android:text="The critical section for shear is taken at distance d/2 from face of column.										"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="D/2				" />
+                    android:maxLines="1"
+                    android:text="D/2				"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Vu			" />
+                    android:maxLines="1"
+                    android:text="Vu			"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="b₀=total length of critical section" />
+                    android:maxLines="1"
+                    android:text="b₀=total length of critical section"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="τᵥ=Vᵤ/(b₀*d)		" />
+                    android:maxLines="1"
+                    android:text="τᵥ=Vᵤ/(b₀*d)		"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ks=0.5+(breadth/length)		" />
+                    android:maxLines="1"
+                    android:text="ks=0.5+(breadth/length)		"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Take ks=		" />
+                    android:maxLines="1"
+                    android:text="Take ks=		"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="τc=0.25*√fck			" />
+                    android:maxLines="1"
+                    android:text="τc=0.25*√fck			"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="τc'=ks*τc		" />
+                    android:maxLines="1"
+                    android:text="τc'=ks*τc		"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="		" />
+                    android:maxLines="1"
+                    android:text="		"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_two_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textSize="60px"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -1928,71 +2351,76 @@
                 android:visibility="gone">
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
-
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_d2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_Vu"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_b0"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_tv"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_ks"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_Takeks"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_tc"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tv_tc_"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/tv_two_status"
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="60px"
-                    android:textStyle="bold" />
+                    android:maxLines="1" />
 
 
             </LinearLayout>

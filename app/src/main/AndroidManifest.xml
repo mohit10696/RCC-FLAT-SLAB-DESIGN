@@ -2,15 +2,43 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rccflatslabdesign">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RCCFLATSLABDESIGN">
-        <activity android:name=".FlatSlabRectangularCol" android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".FlatSlabCircularDrop"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".FlatSlabCircularCol"
+            android:parentActivityName=".MainActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".FlatSlabRectangularDrop"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".FlatSlabRectangularCol"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:requestLegacyExternalStorage="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

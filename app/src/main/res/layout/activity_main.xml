@@ -11,61 +11,61 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:textAlignment="center"
-        android:text="RC FLAT SLAB DESIGN"
-        android:textColor="@color/black"
         android:layout_marginTop="150px"
-        android:textSize="80px"
-        />
+        android:text="RC FLAT SLAB DESIGN"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="80px" />
 
     <LinearLayout
-        android:layout_marginTop="140px"
-        android:layout_below="@+id/tv1"
         android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="500px"
+        android:layout_below="@+id/tv1"
+        android:layout_marginTop="140px"
         android:orientation="vertical"
         android:padding="10px"
         tools:ignore="MissingConstraints">
 
         <androidx.cardview.widget.CardView
-            android:layout_margin="10px"
             android:layout_width="match_parent"
             android:layout_height="500px"
+            android:layout_margin="10px"
             android:layout_weight="1"
             android:backgroundTint="#bbbbef"
             android:clickable="true"
             android:focusable="true"
-            android:onClick="function1"
-            >
+            android:onClick="function1">
+
             <TextView
-                android:textSize="50px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:text="RCC FLAT SLAB DESIGN\n(RECTANGULAR COLUMN)"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="50px" />
         </androidx.cardview.widget.CardView>
 
 
         <androidx.cardview.widget.CardView
-            android:layout_margin="10px"
             android:layout_width="match_parent"
             android:layout_height="500px"
+            android:layout_margin="10px"
             android:layout_weight="1"
             android:backgroundTint="#79e9c3"
             android:clickable="true"
-            android:onClick="function2"
-            android:focusable="true">
+            android:focusable="true"
+            android:onClick="function2">
+
             <TextView
-                android:textSize="50px"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:text="RCC FLAT SLAB DESIGN\n(RECTANGULAR COLUMN WITH DROP\nAND COLUMN HEAD)"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="50px" />
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
@@ -75,19 +75,18 @@
         android:layout_height="500px"
         android:layout_below="@id/linear1"
         android:orientation="vertical"
-        tools:ignore="MissingConstraints"
         android:padding="10px"
-        >
+        tools:ignore="MissingConstraints">
 
         <androidx.cardview.widget.CardView
-            android:layout_margin="10px"
             android:layout_width="match_parent"
             android:layout_height="500px"
+            android:layout_margin="10px"
             android:layout_weight="1"
             android:backgroundTint="#f9b15c"
             android:clickable="true"
-            android:onClick="function3"
-            android:focusable="true">
+            android:focusable="true"
+            android:onClick="function3">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -101,37 +100,41 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_margin="10px"
             android:layout_width="match_parent"
             android:layout_height="500px"
+            android:layout_margin="10px"
             android:layout_weight="1"
             android:backgroundTint="#ffaea9"
-            android:onClick="function4"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:onClick="function4">
+
             <TextView
-                android:textSize="50px"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:text="RCC FLAT SLAB DESIGN\n(CIRCULAR COLUMN WITH DROP AND COLUMN HEAD)"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="50px" />
         </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
 
     <TextView
-        android:drawableRight="@drawable/ic_pdf"
-        android:layout_below="@+id/linear2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/linear2"
         android:layout_margin="20px"
-        android:textSize="60px"
-        android:textColor="@color/black"
         android:clickable="true"
+        android:drawableRight="@drawable/ic_pdf"
         android:focusable="true"
-        android:text="Download PDF "/>
+        android:onClick="downloadpdf"
+        android:text="IS 456 (2000): Plain and Reinforced Concrete-Code of
+Practice "
+        android:textColor="@color/black"
+        android:textSize="60px" />
+
 
 </RelativeLayout>

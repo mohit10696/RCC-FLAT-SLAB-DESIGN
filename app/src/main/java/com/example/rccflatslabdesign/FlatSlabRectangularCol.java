@@ -1,5 +1,6 @@
 package com.example.rccflatslabdesign;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -10,7 +11,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -309,7 +309,8 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
     TextView tv_tc_;
     @BindView(R.id.tv_two_status)
     TextView tv_two_status;
-
+    @BindView(R.id.tv_Takeks)
+    TextView tv_Takeks;
 
     //Material property
     double Fck = 20;
@@ -457,6 +458,7 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
         ButterKnife.bind(this);
 //        int decode = Integer.decode("");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4a4aed")));
+        getSupportActionBar().setTitle("RCC FLAT SLAB DESIGN(RECTANGULAR COLUMN");
         calDepthOfSlab();
         loadCalculation();
         stiffnessCalculation();
@@ -483,25 +485,26 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
 
     }
 
+    @SuppressLint("ResourceAsColor")
     private void initview() {
-        tv_fck.setText(String.valueOf(Fck));
-        tv_fy.setText(String.valueOf(Fy));
+        tv_fck.setText(String.valueOf(Fck) + " N/mm²");
+        tv_fy.setText(String.valueOf(Fy) + " N/mm²");
 
 
         tv_M_F.setText(String.valueOf(M_F));
-        tv_depth.setText(String.valueOf(depth));
-        tv_Provide_overall_depth.setText(String.valueOf(Provide_overall_depth));
-        tv_depth_without_effective_cover.setText(String.valueOf(depth_without_effective_cover));
-        tv_dl_for_longer_side.setText(String.valueOf(dl_for_longer_side));
-        tv_ds_for_shorter_side.setText(String.valueOf(ds_for_shorter_side));
+        tv_depth.setText(String.valueOf(depth) + " mm");
+        tv_Provide_overall_depth.setText(String.valueOf(Provide_overall_depth) + " mm");
+        tv_depth_without_effective_cover.setText(String.valueOf(depth_without_effective_cover) + " mm");
+        tv_dl_for_longer_side.setText(String.valueOf(dl_for_longer_side) + " mm");
+        tv_ds_for_shorter_side.setText(String.valueOf(ds_for_shorter_side) + " mm");
 
-        tv_Self_weight.setText(String.valueOf(Self_weight));
-        tv_Floor_finish.setText(String.valueOf(Floor_finish));
-        tv_Live_load_1.setText(String.valueOf(Live_load_1));
-        tv_tv_load_total.setText(String.valueOf(load_total));
-        tv_Factored_total_load.setText(String.valueOf(Factored_total_load));
-        tv_Dead_load.setText(String.valueOf(Dead_load));
-        tv_Live_load_2.setText(String.valueOf(Live_load_2));
+        tv_Self_weight.setText(String.valueOf(Self_weight) + " kN/m²");
+        tv_Floor_finish.setText(String.valueOf(Floor_finish) + " kN/m²");
+        tv_Live_load_1.setText(String.valueOf(Live_load_1) + " kN/m²");
+        tv_tv_load_total.setText(String.valueOf(load_total) + " kN/m²");
+        tv_Factored_total_load.setText(String.valueOf(Factored_total_load) + " kN/m²");
+        tv_Dead_load.setText(String.valueOf(Dead_load) + " kN/m²");
+        tv_Live_load_2.setText(String.valueOf(Live_load_2) + " kN/m²");
 
         tv_along_longer_kc.setText(String.valueOf(along_longer_kc));
         tv_along_longer_ks.setText(String.valueOf(along_longer_ks));
@@ -515,97 +518,99 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
             tv_ratio_ll_dl_text.setText("OK");
         } else {
             tv_ratio_ll_dl_text.setText("NOT OK, CORRECTION REQUIRED");
+            tv_ratio_ll_dl_text.setTextColor(R.color.red);
         }
 
-        tv_along_longer_direction_ln.setText(String.valueOf(along_longer_direction_ln));
-        tv_along_longer_direction_Mol.setText(String.valueOf(along_longer_direction_Mol));
-        tv_along_shorter_direction_ln.setText(String.valueOf(along_shorter_direction_ln));
-        tv_along_shorter_direction_Mol.setText(String.valueOf(along_shorter_direction_Mol));
+        tv_along_longer_direction_ln.setText(String.valueOf(along_longer_direction_ln) + " m");
+        tv_along_longer_direction_Mol.setText(String.valueOf(along_longer_direction_Mol) + " kN*m");
+        tv_along_shorter_direction_ln.setText(String.valueOf(along_shorter_direction_ln) + " m");
+        tv_along_shorter_direction_Mol.setText(String.valueOf(along_shorter_direction_Mol) + " kN*m");
 
-        tv_along_long_span_col_1.setText(String.valueOf(along_long_span_col_1));
-        tv_along_long_span_col_2.setText(String.valueOf(along_long_span_col_2));
-        tv_along_long_span_width_col.setText(String.valueOf(along_long_span_width_col));
-        tv_along_long_span_width_mid.setText(String.valueOf(along_long_span_width_mid));
-        tv_along_short_span_col_1.setText(String.valueOf(along_short_span_col_1));
-        tv_along_short_span_col_2.setText(String.valueOf(along_short_span_col_2));
-        tv_along_short_span_width_col.setText(String.valueOf(along_short_span_width_col));
-        tv_along_short_span_width_mid.setText(String.valueOf(along_short_span_width_mid));
+        tv_along_long_span_col_1.setText(String.valueOf(along_long_span_col_1) + " mm");
+        tv_along_long_span_col_2.setText(String.valueOf(along_long_span_col_2) + " mm");
+        tv_along_long_span_width_col.setText(String.valueOf(along_long_span_width_col) + " mm");
+        tv_along_long_span_width_mid.setText(String.valueOf(along_long_span_width_mid) + " mm");
+        tv_along_short_span_col_1.setText(String.valueOf(along_short_span_col_1) + " mm");
+        tv_along_short_span_col_2.setText(String.valueOf(along_short_span_col_2) + " mm");
+        tv_along_short_span_width_col.setText(String.valueOf(along_short_span_width_col) + " mm");
+        tv_along_short_span_width_mid.setText(String.valueOf(along_short_span_width_mid) + " mm");
 
-        tv_along_long_span_mu_col_plus.setText(String.valueOf(along_long_span_mu_col_plus));
-        tv_along_long_span_ptpersontage_col_plus.setText(String.valueOf(along_long_span_ptpersontage_col_plus));
-        tv_along_long_span_takept_col_plus.setText(String.valueOf(along_long_span_takept_col_plus));
-        tv_along_long_span_totalast_col_plus.setText(String.valueOf(along_long_span_totalast_col_plus));
-        tv_along_long_span_astbyM_col_plus.setText(String.valueOf(along_long_span_astbyM_col_plus));
-        tv_along_long_span_provided_col_plus.setText(String.valueOf(along_long_span_provided_col_plus));
-        tv_along_long_span_finalAst_col_plus.setText(String.valueOf(along_long_span_finalAst_col_plus));
-        tv_along_long_span_mu_mid_plus.setText(String.valueOf(along_long_span_mu_mid_plus));
-        tv_along_long_span_ptpersontage_mid_plus.setText(String.valueOf(along_long_span_ptpersontage_mid_plus));
-        tv_along_long_span_takept_mid_plus.setText(String.valueOf(along_long_span_takept_mid_plus));
-        tv_along_long_span_totalast_mid_plus.setText(String.valueOf(along_long_span_totalast_mid_plus));
-        tv_along_long_span_astbyM_mid_plus.setText(String.valueOf(along_long_span_astbyM_mid_plus));
-        tv_along_long_span_provided_mid_plus.setText(String.valueOf(along_long_span_provided_mid_plus));
-        tv_along_long_span_finalAst_mid_plus.setText(String.valueOf(along_long_span_finalAst_mid_plus));
-        tv_along_long_span_col_width.setText(String.valueOf(along_long_span_col_width));
-        tv_along_long_span_mu_col_minus.setText(String.valueOf(along_long_span_mu_col_minus));
-        tv_along_long_span_ptpersontage_col_minus.setText(String.valueOf(along_long_span_ptpersontage_col_minus));
-        tv_along_long_span_takept_col_minus.setText(String.valueOf(along_long_span_takept_col_minus));
-        tv_along_long_span_totalast_col_minus.setText(String.valueOf(along_long_span_totalast_col_minus));
-        tv_along_long_span_astbyM_col_minus.setText(String.valueOf(along_long_span_astbyM_col_minus));
-        tv_along_long_span_provided_col_minus.setText(String.valueOf(along_long_span_provided_col_minus));
-        tv_along_long_span_finalAst_col_minus.setText(String.valueOf(along_long_span_finalAst_col_minus));
-        tv_along_long_span_mid_width.setText(String.valueOf(along_long_span_mid_width));
-        tv_along_long_span_mu_mid_minus.setText(String.valueOf(along_long_span_mu_mid_minus));
-        tv_along_long_span_ptpersontage_mid_minus.setText(String.valueOf(along_long_span_ptpersontage_mid_minus));
-        tv_along_long_span_takept_mid_minus.setText(String.valueOf(along_long_span_takept_mid_minus));
-        tv_along_long_span_totalast_mid_minus.setText(String.valueOf(along_long_span_totalast_mid_minus));
-        tv_along_long_span_astbyM_mid_minus.setText(String.valueOf(along_long_span_astbyM_mid_minus));
-        tv_along_long_span_provided_mid_minus.setText(String.valueOf(along_long_span_provided_mid_minus));
-        tv_along_long_span_finalAst_mid_minus.setText(String.valueOf(along_long_span_finalAst_mid_minus));
+        tv_along_long_span_mu_col_plus.setText(String.valueOf(along_long_span_mu_col_plus)+" kN*m");
+        tv_along_long_span_ptpersontage_col_plus.setText(String.valueOf(centralStore.round(along_long_span_ptpersontage_col_plus,2))+" %");
+        tv_along_long_span_takept_col_plus.setText(String.valueOf(centralStore.round(along_long_span_takept_col_plus,2))+" %");
+        tv_along_long_span_totalast_col_plus.setText(String.valueOf(centralStore.round(along_long_span_totalast_col_plus,2))+" mm²");
+        tv_along_long_span_astbyM_col_plus.setText(String.valueOf(centralStore.round(along_long_span_astbyM_col_plus,2))+" mm²");
+        tv_along_long_span_provided_col_plus.setText("16 dia. @"+String.valueOf(along_long_span_provided_col_plus)+" mm²");
+        tv_along_long_span_finalAst_col_plus.setText(String.valueOf(along_long_span_finalAst_col_plus)+" mm²");
+        tv_along_long_span_mu_mid_plus.setText(String.valueOf(along_long_span_mu_mid_plus)+" kN*m");
+        tv_along_long_span_ptpersontage_mid_plus.setText(String.valueOf(centralStore.round(along_long_span_ptpersontage_mid_plus,2))+" %");
+        tv_along_long_span_takept_mid_plus.setText(String.valueOf(centralStore.round(along_long_span_takept_mid_plus,2))+" %");
+        tv_along_long_span_totalast_mid_plus.setText(String.valueOf(centralStore.round(along_long_span_totalast_mid_plus,2))+" mm²");
+        tv_along_long_span_astbyM_mid_plus.setText(String.valueOf(centralStore.round(along_long_span_astbyM_mid_plus,2))+" mm²");
+        tv_along_long_span_provided_mid_plus.setText("10 dia. @"+String.valueOf(along_long_span_provided_mid_plus)+" mm²");
+        tv_along_long_span_finalAst_mid_plus.setText(String.valueOf(along_long_span_finalAst_mid_plus)+" mm²");
+        tv_along_long_span_col_width.setText(String.valueOf(along_long_span_col_width)+" mm");
+        tv_along_long_span_mu_col_minus.setText(String.valueOf(along_long_span_mu_col_minus)+" kN*m");
+        tv_along_long_span_ptpersontage_col_minus.setText(String.valueOf(centralStore.round(along_long_span_ptpersontage_col_minus,2))+" %");
+        tv_along_long_span_takept_col_minus.setText(String.valueOf(centralStore.round(along_long_span_takept_col_minus,2))+" %");
+        tv_along_long_span_totalast_col_minus.setText(String.valueOf(centralStore.round(along_long_span_totalast_col_minus,2))+" mm²");
+        tv_along_long_span_astbyM_col_minus.setText(String.valueOf(centralStore.round(along_long_span_astbyM_col_minus,2))+" mm²");
+        tv_along_long_span_provided_col_minus.setText("8 dia. @"+String.valueOf(along_long_span_provided_col_minus)+" mm²");
+        tv_along_long_span_finalAst_col_minus.setText(String.valueOf(along_long_span_finalAst_col_minus)+" mm²");
+        tv_along_long_span_mid_width.setText(String.valueOf(along_long_span_mid_width)+" mm²");
+        tv_along_long_span_mu_mid_minus.setText(String.valueOf(along_long_span_mu_mid_minus)+" kN*m");
+        tv_along_long_span_ptpersontage_mid_minus.setText(String.valueOf(centralStore.round(along_long_span_ptpersontage_mid_minus,2))+" %");
+        tv_along_long_span_takept_mid_minus.setText(String.valueOf(centralStore.round(along_long_span_takept_mid_minus,2))+" %");
+        tv_along_long_span_totalast_mid_minus.setText(String.valueOf(centralStore.round(along_long_span_totalast_mid_minus,2))+" mm²");
+        tv_along_long_span_astbyM_mid_minus.setText(String.valueOf(centralStore.round(along_long_span_astbyM_mid_minus,2))+" mm²");
+        tv_along_long_span_provided_mid_minus.setText("8 dia. @"+String.valueOf(along_long_span_provided_mid_minus)+" mm²");
+        tv_along_long_span_finalAst_mid_minus.setText(String.valueOf(along_long_span_finalAst_mid_minus)+" mm²");
 
 
-        tv_along_short_span_mu_col_plus.setText(String.valueOf(along_short_span_mu_col_plus));
-        tv_along_short_span_ptpersontage_col_plus.setText(String.valueOf(along_short_span_ptpersontage_col_plus));
-        tv_along_short_span_takept_col_plus.setText(String.valueOf(along_short_span_takept_col_plus));
-        tv_along_short_span_totalast_col_plus.setText(String.valueOf(along_short_span_totalast_col_plus));
-        tv_along_short_span_astbyM_col_plus.setText(String.valueOf(along_short_span_astbyM_col_plus));
-        tv_along_short_span_provided_col_plus.setText(String.valueOf(along_short_span_provided_col_plus));
-        tv_along_short_span_finalAst_col_plus.setText(String.valueOf(along_short_span_finalAst_col_plus));
-        tv_along_short_span_mu_mid_plus.setText(String.valueOf(along_short_span_mu_mid_plus));
-        tv_along_short_span_ptpersontage_mid_plus.setText(String.valueOf(along_short_span_ptpersontage_mid_plus));
-        tv_along_short_span_takept_mid_plus.setText(String.valueOf(along_short_span_takept_mid_plus));
-        tv_along_short_span_totalast_mid_plus.setText(String.valueOf(along_short_span_totalast_mid_plus));
-        tv_along_short_span_astbyM_mid_plus.setText(String.valueOf(along_short_span_astbyM_mid_plus));
-        tv_along_short_span_provided_mid_plus.setText(String.valueOf(along_short_span_provided_mid_plus));
-        tv_along_short_span_finalAst_mid_plus.setText(String.valueOf(along_short_span_finalAst_mid_plus));
-        tv_along_short_span_col_width.setText(String.valueOf(along_short_span_col_width));
-        tv_along_short_span_mu_col_minus.setText(String.valueOf(along_short_span_mu_col_minus));
-        tv_along_short_span_ptpersontage_col_minus.setText(String.valueOf(along_short_span_ptpersontage_col_minus));
-        tv_along_short_span_takept_col_minus.setText(String.valueOf(along_short_span_takept_col_minus));
-        tv_along_short_span_totalast_col_minus.setText(String.valueOf(along_short_span_totalast_col_minus));
-        tv_along_short_span_astbyM_col_minus.setText(String.valueOf(along_short_span_astbyM_col_minus));
-        tv_along_short_span_provided_col_minus.setText(String.valueOf(along_short_span_provided_col_minus));
-        tv_along_short_span_finalAst_col_minus.setText(String.valueOf(along_short_span_finalAst_col_minus));
-        tv_along_short_span_mid_width.setText(String.valueOf(along_short_span_mid_width));
-        tv_along_short_span_mu_mid_minus.setText(String.valueOf(along_short_span_mu_mid_minus));
-        tv_along_short_span_ptpersontage_mid_minus.setText(String.valueOf(along_short_span_ptpersontage_mid_minus));
-        tv_along_short_span_takept_mid_minus.setText(String.valueOf(along_short_span_takept_mid_minus));
-        tv_along_short_span_totalast_mid_minus.setText(String.valueOf(along_short_span_totalast_mid_minus));
-        tv_along_short_span_astbyM_mid_minus.setText(String.valueOf(along_short_span_astbyM_mid_minus));
-        tv_along_short_span_provided_mid_minus.setText(String.valueOf(along_short_span_provided_mid_minus));
-        tv_along_short_span_finalAst_mid_minus.setText(String.valueOf(along_short_span_finalAst_mid_minus));
+        tv_along_short_span_mu_col_plus.setText(String.valueOf(along_short_span_mu_col_plus)+" kN*m");
+        tv_along_short_span_ptpersontage_col_plus.setText(String.valueOf(centralStore.round(along_short_span_ptpersontage_col_plus,2))+" %");
+        tv_along_short_span_takept_col_plus.setText(String.valueOf(centralStore.round(along_short_span_takept_col_plus,2))+" %");
+        tv_along_short_span_totalast_col_plus.setText(String.valueOf(centralStore.round(along_short_span_totalast_col_plus,2))+" mm²");
+        tv_along_short_span_astbyM_col_plus.setText(String.valueOf(centralStore.round(along_short_span_astbyM_col_plus,2))+" mm²");
+        tv_along_short_span_provided_col_plus.setText("16 dia. @"+String.valueOf(along_short_span_provided_col_plus)+" mm²");
+        tv_along_short_span_finalAst_col_plus.setText(String.valueOf(along_short_span_finalAst_col_plus)+" mm²");
+        tv_along_short_span_mu_mid_plus.setText(String.valueOf(along_short_span_mu_mid_plus)+" kN*m");
+        tv_along_short_span_ptpersontage_mid_plus.setText(String.valueOf(centralStore.round(along_short_span_ptpersontage_mid_plus,2))+" %");
+        tv_along_short_span_takept_mid_plus.setText(String.valueOf(centralStore.round(along_short_span_takept_mid_plus,2))+" %");
+        tv_along_short_span_totalast_mid_plus.setText(String.valueOf(centralStore.round(along_short_span_totalast_mid_plus,2))+" mm²");
+        tv_along_short_span_astbyM_mid_plus.setText(String.valueOf(centralStore.round(along_short_span_astbyM_mid_plus,2))+" mm²");
+        tv_along_short_span_provided_mid_plus.setText("10 dia. @"+String.valueOf(along_short_span_provided_mid_plus)+" mm²");
+        tv_along_short_span_finalAst_mid_plus.setText(String.valueOf(along_short_span_finalAst_mid_plus)+" mm²");
+        tv_along_short_span_col_width.setText(String.valueOf(along_short_span_col_width)+" mm");
+        tv_along_short_span_mu_col_minus.setText(String.valueOf(along_short_span_mu_col_minus)+" kN*m");
+        tv_along_short_span_ptpersontage_col_minus.setText(String.valueOf(centralStore.round(along_short_span_ptpersontage_col_minus,2))+" %");
+        tv_along_short_span_takept_col_minus.setText(String.valueOf(centralStore.round(along_short_span_takept_col_minus,2))+" %");
+        tv_along_short_span_totalast_col_minus.setText(String.valueOf(centralStore.round(along_short_span_totalast_col_minus,2))+" mm²");
+        tv_along_short_span_astbyM_col_minus.setText(String.valueOf(centralStore.round(along_short_span_astbyM_col_minus,2))+" mm²");
+        tv_along_short_span_provided_col_minus.setText("8 dia. @"+String.valueOf(along_short_span_provided_col_minus)+" mm²");
+        tv_along_short_span_finalAst_col_minus.setText(String.valueOf(along_short_span_finalAst_col_minus)+" mm²");
+        tv_along_short_span_mid_width.setText(String.valueOf(along_short_span_mid_width)+" mm²");
+        tv_along_short_span_mu_mid_minus.setText(String.valueOf(along_short_span_mu_mid_minus)+" kN*m");
+        tv_along_short_span_ptpersontage_mid_minus.setText(String.valueOf(centralStore.round(along_short_span_ptpersontage_mid_minus,2))+" %");
+        tv_along_short_span_takept_mid_minus.setText(String.valueOf(centralStore.round(along_short_span_takept_mid_minus,2))+" %");
+        tv_along_short_span_totalast_mid_minus.setText(String.valueOf(centralStore.round(along_short_span_totalast_mid_minus,2))+" mm²");
+        tv_along_short_span_astbyM_mid_minus.setText(String.valueOf(centralStore.round(along_short_span_astbyM_mid_minus,2))+" mm²");
+        tv_along_short_span_provided_mid_minus.setText("8 dia. @"+String.valueOf(along_short_span_provided_mid_minus)+" mm²");
+        tv_along_short_span_finalAst_mid_minus.setText(String.valueOf(along_short_span_finalAst_mid_minus)+" mm²");
 
-        tv_d2.setText(String.valueOf(d2));
-        tv_Vu.setText(String.valueOf(Vu));
-        tv_b0.setText(String.valueOf(b0));
-        tv_tv.setText(String.valueOf(tv));
+        tv_d2.setText(String.valueOf(d2)+" mm");
+        tv_Vu.setText(String.valueOf(Vu)+" kN");
+        tv_b0.setText(String.valueOf(b0)+" mm");
+        tv_tv.setText(String.valueOf(tv)+" N/mm²");
         tv_ks.setText(String.valueOf(ks));
-        tv_tc.setText(String.valueOf(tc));
-        tv_tc_.setText(String.valueOf(tc_));
+        tv_Takeks.setText(String.valueOf(Takeks));
+        tv_tc.setText(String.valueOf(tc)+" N/mm²");
+        tv_tc_.setText(String.valueOf(tc_)+" N/mm²");
         if (tv < tc_) {
             tv_two_status.setText("OK");
-        }
-        else {
+        } else {
             tv_two_status.setText("NOT OK, Shear reinforecement is required");
+            tv_two_status.setTextColor(R.color.red);
         }
 //        tv_two_status.setText();
     }
@@ -650,11 +655,7 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
     private void checkForCorrection() {
         ratio_ll_dl = Live_load_2 / Dead_load;
         Log.e("ratio_ll_dl", "calDepthOfSlab: " + String.valueOf(ratio_ll_dl));
-        if (ratio_ll_dl <= 0.5) {
-            Toast.makeText(this, "OK", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "NOT OK, CORRECTION REQUIRED", Toast.LENGTH_SHORT).show();
-        }
+
     }
 
     private void totalDesignMoment() {
@@ -897,14 +898,43 @@ public class FlatSlabRectangularCol extends AppCompatActivity {
 
         @Override
         public void afterTextChanged(Editable s) {
-            Toast.makeText(FlatSlabRectangularCol.this, "hi", Toast.LENGTH_SHORT).show();
-            interior_longer_span = Double.parseDouble(et_interior_longer_span.getText().toString());
-            interior_shorter_span = Double.parseDouble(et_interior_shorter_span.getText().toString());
-            size_of_col_length = Double.parseDouble(et_size_of_col_length.getText().toString());
-            size_of_col_breadth = Double.parseDouble(et_size_of_col_breadth.getText().toString());
-            live_load = Double.parseDouble(et_live_load.getText().toString());
-            floor_finish = Double.parseDouble(et_floor_finish.getText().toString());
-            height_of_col = Double.parseDouble(et_height_of_col.getText().toString());
+//            Toast.makeText(FlatSlabRectangularCol.this, "hi", Toast.LENGTH_SHORT).show();
+            if (et_interior_longer_span.getText().toString().isEmpty()) {
+                interior_longer_span = 0.0;
+            } else {
+                interior_longer_span = Double.parseDouble(et_interior_longer_span.getText().toString());
+            }
+            if (et_interior_shorter_span.getText().toString().isEmpty()) {
+                interior_shorter_span = 0.0;
+            } else {
+                interior_shorter_span = Double.parseDouble(et_interior_shorter_span.getText().toString());
+            }
+            if (et_size_of_col_length.getText().toString().isEmpty()) {
+                size_of_col_length = 0.0;
+            } else {
+                size_of_col_length = Double.parseDouble(et_size_of_col_length.getText().toString());
+            }
+            if (et_size_of_col_breadth.getText().toString().isEmpty()) {
+                size_of_col_breadth = 0.0;
+            } else {
+                size_of_col_breadth = Double.parseDouble(et_size_of_col_breadth.getText().toString());
+            }
+            if (et_live_load.getText().toString().isEmpty()) {
+                live_load = 0.0;
+            } else {
+                live_load = Double.parseDouble(et_live_load.getText().toString());
+            }
+            if (et_floor_finish.getText().toString().isEmpty()) {
+                floor_finish = 0.0;
+            } else {
+                floor_finish = Double.parseDouble(et_floor_finish.getText().toString());
+            }
+            if (et_height_of_col.getText().toString().isEmpty()) {
+                height_of_col = 0.0;
+            } else {
+                height_of_col = Double.parseDouble(et_height_of_col.getText().toString());
+            }
+
             calDepthOfSlab();
             loadCalculation();
             stiffnessCalculation();
